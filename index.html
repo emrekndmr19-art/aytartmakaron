@@ -66,11 +66,10 @@
     position: relative;
     z-index: 1;
     height: 100%;
-    padding: 48px 54px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    justify-content: space-between;
+    padding: 40px 48px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 16px;
   }
   .page-header {
     display: flex;
@@ -88,8 +87,24 @@
   }
   .product-grid {
     display: grid;
-    gap: 18px;
+    gap: 16px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+  }
+  .product-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .product-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .product-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
   }
   .product-stack {
     display: flex;
@@ -105,6 +120,40 @@
     background: rgba(255, 255, 255, 0.92);
     box-shadow: 0 12px 24px rgba(61, 43, 70, 0.12);
     border: 1px solid rgba(176, 24, 111, 0.12);
+    height: 100%;
+  }
+  .product-card.staggered {
+    width: 86%;
+  }
+  .product-card.staggered-left {
+    align-self: flex-start;
+    transform: rotate(-1.2deg);
+  }
+  .product-card.staggered-right {
+    align-self: flex-end;
+    transform: rotate(1.4deg);
+  }
+  .product-card.staggered {
+    width: 86%;
+  }
+  .product-card.staggered-left {
+    align-self: flex-start;
+    transform: rotate(-1.2deg);
+  }
+  .product-card.staggered-right {
+    align-self: flex-end;
+    transform: rotate(1.4deg);
+  }
+  .product-card.staggered {
+    width: 86%;
+  }
+  .product-card.staggered-left {
+    align-self: flex-start;
+    transform: rotate(-1.2deg);
+  }
+  .product-card.staggered-right {
+    align-self: flex-end;
+    transform: rotate(1.4deg);
   }
   .product-card.staggered {
     width: 86%;
