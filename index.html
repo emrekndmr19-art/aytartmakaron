@@ -1,107 +1,193 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="tr">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Ay Bakery | 2024 Koleksiyonu</title>
+<title>Aytart Makaron | Ürün Kataloğu</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Great+Vibes&amp;family=Montserrat:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <style type="text/tailwindcss">
-        :root {
-            --primary-burgundy: #8B1E23;
-            --cream: #FFFBF2;
-            --gold: #D4AF37;
-            --gold-light: #FBF5B7;
-        }
-        @layer base {
-            body {
-                @apply bg-[#f8f5f0] text-gray-900 overflow-x-hidden;
-                font-family: 'Cormorant Garamond', serif;
-            }
-        }
-        .a4-container {
-            width: 210mm;
-            height: 297mm;
-            margin: 0 auto;
-            position: relative;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            background-color: var(--cream);
-        }
-        .gold-border-frame {
-            border: 2px solid var(--gold);
-            padding: 2px;
-            position: relative;
-        }
-        .gold-border-frame::before {
-            content: '';
-            position: absolute;
-            inset: 4px;
-            border: 1px solid var(--gold);
-            pointer-events: none;
-        }
-        .vignette {
-            background: radial-gradient(circle, transparent 40%, rgba(0,0,0,0.3) 100%);
-        }
-    </style>
+  :root {
+    --magenta: #b0186f;
+    --magenta-dark: #7f0f4e;
+    --plum: #3d2b46;
+    --cream: #f7f0f4;
+    --silver: #e5e1e8;
+  }
+  @layer base {
+    body {
+      @apply bg-neutral-200 text-neutral-900;
+      font-family: 'Montserrat', sans-serif;
+    }
+  }
+  .a4-container {
+    width: 210mm;
+    height: 297mm;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle at 15% 15%, rgba(255,255,255,0.85), rgba(255,255,255,0.65)),
+      url('https://images.unsplash.com/photo-1514516430035-1f4b9bbf49d4?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+    box-shadow: 0 20px 45px rgba(20, 10, 30, 0.25);
+  }
+  .pattern-dots {
+    background-image: radial-gradient(rgba(255,255,255,0.65) 1.5px, transparent 1.5px);
+    background-size: 10px 10px;
+  }
+  .hex-frame {
+    width: 210px;
+    height: 190px;
+    clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0 50%);
+    border: 6px solid #ffffff;
+    box-shadow: 0 10px 25px rgba(60, 20, 50, 0.3);
+    overflow: hidden;
+  }
+  .hex-frame.small {
+    width: 170px;
+    height: 150px;
+  }
+  .hex-frame.tiny {
+    width: 150px;
+    height: 130px;
+  }
+  .hex-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .slanted-band {
+    position: absolute;
+    inset: -40px -80px auto auto;
+    width: 55%;
+    height: 120%;
+    transform: skewX(-15deg);
+    background: linear-gradient(180deg, var(--magenta) 0%, var(--magenta-dark) 100%);
+  }
+  .slanted-band::after {
+    content: '';
+    position: absolute;
+    right: 30px;
+    top: 0;
+    width: 18px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+  }
+  .logo-art {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    padding: 10px;
+    border-radius: 32px;
+    background: linear-gradient(140deg, #f8e7f1, #f1ccd9);
+    box-shadow: 0 16px 30px rgba(61, 43, 70, 0.25);
+    transform: rotate(-6deg);
+  }
+  .logo-art::before {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border-radius: 28px;
+    border: 2px solid rgba(176, 24, 111, 0.45);
+  }
+  .logo-art::after {
+    content: '';
+    position: absolute;
+    right: -12px;
+    top: -10px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.9), rgba(176, 24, 111, 0.15));
+    box-shadow: 0 6px 16px rgba(176, 24, 111, 0.35);
+  }
+  .logo-art img {
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    object-fit: cover;
+    filter: drop-shadow(0 8px 12px rgba(127, 15, 78, 0.3));
+  }
+  .ornate-badge {
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    background: linear-gradient(120deg, rgba(176, 24, 111, 0.9), rgba(127, 15, 78, 0.9));
+    box-shadow: 0 10px 20px rgba(61, 43, 70, 0.35);
+  }
+</style>
 </head>
-<body class="py-20 flex justify-center items-center min-h-screen bg-gray-100">
-<div class="a4-container overflow-hidden">
-<div class="absolute inset-0 z-0">
-<img alt="Luxury Pastry Background" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpJ5JocVKziGQXLI0xzFhb-dF430j16T_1wBPfeA3U4-67KzgLwZY_k7l-E7INcevtbYgXKsRXlC9YBhY6cxcfW0u3zh1dMVcdvkSei_CVUWHczrCf1CTPWNtLcZSEThIv1K8LWSgKHpXxZNQlmbTZiEz2iyx_s3wHuUmEAlIF6YO8681GJKT1D2vtovwD9au4w4zGsTpAGD7wplXBjHu4QEvqnq7DAOZCliKd-r-3Pz9DeieEKkM1tIrIuk0zUEaih43vKJBYlyTY"/>
-<div class="absolute inset-0 vignette"></div>
-<div class="absolute inset-0 bg-black/10"></div>
-</div>
-<div class="relative z-10 h-full w-full flex flex-col items-center justify-center p-12">
-<div class="bg-white/90 backdrop-blur-sm p-12 text-center max-w-lg w-full gold-border-frame shadow-2xl">
-<div class="mb-8 flex flex-col items-center">
-<div class="flex items-center space-x-2">
-<span class="font-['Great_Vibes'] text-7xl text-[var(--primary-burgundy)]">Ay</span>
-<div class="flex flex-col items-start border-l border-[var(--primary-burgundy)]/30 pl-4 mt-2">
-<span class="font-['Montserrat'] tracking-[0.4em] text-sm font-semibold uppercase text-[var(--primary-burgundy)]">Bakery</span>
-<span class="font-['Cormorant_Garamond'] italic text-xs tracking-widest text-[var(--primary-burgundy)]/70 uppercase">Pâtisserie d'Excellence</span>
-</div>
-</div>
-</div>
-<div class="w-24 h-[1px] bg-[var(--gold)] mx-auto mb-8 opacity-60"></div>
-<div class="space-y-4">
-<h1 class="font-['Playfair_Display'] text-5xl uppercase tracking-[0.15em] text-[var(--primary-burgundy)] font-normal">
-                        2024
-                    </h1>
-<h2 class="font-['Playfair_Display'] text-4xl italic tracking-[0.05em] text-[var(--primary-burgundy)]">
-                        Koleksiyonu
-                    </h2>
-</div>
-<div class="mt-10">
-<p class="font-['Great_Vibes'] text-3xl text-[var(--gold)]">
-                        Sanatla Yoğrulan Lezzetler
-                    </p>
-</div>
-</div>
-<div class="absolute bottom-16 text-center space-y-6">
-<div class="flex items-center justify-center space-x-4">
-<div class="w-12 h-[1px] bg-white/50"></div>
-<span class="text-white font-['Montserrat'] text-[10px] uppercase tracking-[0.5em]">Paris &amp; Istanbul</span>
-<div class="w-12 h-[1px] bg-white/50"></div>
-</div>
-<div class="flex justify-center space-x-8">
-<span class="material-symbols-outlined text-white/80 font-light text-xl">auto_awesome</span>
-<span class="material-symbols-outlined text-white/80 font-light text-xl">temp_preferences_custom</span>
-<span class="material-symbols-outlined text-white/80 font-light text-xl">verified</span>
-</div>
-</div>
-</div>
-<div class="absolute top-0 left-0 w-32 h-32 border-t-2 border-l-2 border-[var(--gold)]/30 m-8 pointer-events-none"></div>
-<div class="absolute top-0 right-0 w-32 h-32 border-t-2 border-r-2 border-[var(--gold)]/30 m-8 pointer-events-none"></div>
-<div class="absolute bottom-0 left-0 w-32 h-32 border-b-2 border-l-2 border-[var(--gold)]/30 m-8 pointer-events-none"></div>
-<div class="absolute bottom-0 right-0 w-32 h-32 border-b-2 border-r-2 border-[var(--gold)]/30 m-8 pointer-events-none"></div>
-</div>
-<div class="fixed bottom-8 right-8 flex flex-col items-end space-y-4">
-<button class="bg-[var(--primary-burgundy)] text-white p-4 rounded-full shadow-xl hover:scale-110 transition-transform">
-<span class="material-symbols-outlined">download</span>
-</button>
-<p class="text-[10px] font-['Montserrat'] uppercase tracking-widest text-gray-400 rotate-90 origin-right translate-y-12">Digital Edition</p>
-</div>
+<body class="py-10">
+  <main class="a4-container">
+    <div class="absolute inset-0 bg-white/45"></div>
 
-</body></html>
+    <div class="slanted-band"></div>
+    <div class="absolute right-0 top-0 h-full w-[45%] pattern-dots opacity-40"></div>
+
+    <div class="relative z-10 flex h-full flex-col justify-between px-12 py-14">
+      <div class="flex items-start justify-between">
+        <div class="flex items-center gap-6">
+          <div class="logo-art">
+            <img alt="Aytart Makaron logosu" src="logoaytart.jpeg"/>
+          </div>
+          <div>
+            <div class="flex items-baseline gap-3">
+              <span class="text-5xl font-['Playfair_Display'] font-bold text-[var(--plum)]">Aytart</span>
+              <span class="text-4xl text-[var(--magenta)] font-['Great_Vibes']">Makaron</span>
+            </div>
+            <p class="text-[13px] italic text-[var(--magenta-dark)]">lezzetin en kıymetlisi</p>
+            <p class="mt-3 text-xs uppercase tracking-[0.35em] text-[var(--plum)]">Özel Seri • El Yapımı Tatlar</p>
+          </div>
+        </div>
+        <div class="text-right text-xs font-semibold uppercase tracking-[0.3em] text-white">
+          <span class="rounded-full bg-[var(--magenta-dark)] px-4 py-2">2024</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[1.1fr_1fr] gap-10">
+        <div class="flex flex-col items-start justify-center gap-10">
+          <div class="rounded-[32px] bg-[var(--plum)]/90 px-10 py-8 shadow-xl">
+            <h1 class="text-3xl font-semibold uppercase tracking-widest text-white">Ürün</h1>
+            <h2 class="text-3xl font-semibold uppercase tracking-widest text-white">Kataloğu</h2>
+          </div>
+          <div class="ornate-badge inline-flex items-center gap-3 rounded-full px-6 py-3 text-sm text-white">
+            <span class="text-lg">✦</span>
+            <span class="font-semibold uppercase tracking-[0.35em]">Signature Collection</span>
+            <span class="text-lg">✦</span>
+          </div>
+          <div class="flex items-center gap-6 text-sm">
+            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--magenta)] text-white">@</div>
+            <div>
+              <p class="font-semibold text-[var(--plum)]">website</p>
+              <p class="font-bold text-[var(--plum)]">www.aytartmakaron.com</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-6 text-sm">
+            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--magenta)] text-white">☎</div>
+            <div class="space-y-1">
+              <p class="font-semibold text-[var(--plum)]">0312 255 4105</p>
+              <p class="font-semibold text-[var(--plum)]">0539 711 9914</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative flex flex-col items-end gap-6 pr-6">
+          <div class="hex-frame small border-[var(--magenta-dark)]">
+            <img alt="Makaron Tabağı" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=600&q=80"/>
+          </div>
+          <div class="hex-frame border-[var(--magenta)]">
+            <img alt="Çilekli Tatlılar" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80"/>
+          </div>
+          <div class="hex-frame tiny border-[var(--plum)]">
+            <img alt="Mini Tart Çeşitleri" src="https://images.unsplash.com/photo-1505252585461-04db1eb84625?auto=format&fit=crop&w=600&q=80"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute bottom-10 left-0 h-40 w-72 pattern-dots opacity-60"></div>
+    <div class="absolute top-28 left-12 h-28 w-28 rounded-full bg-[var(--magenta)]/20"></div>
+    <div class="absolute left-10 top-48 h-14 w-40 rounded-full bg-white/70 blur-[1px]"></div>
+    <div class="absolute bottom-24 right-32 h-20 w-20 rounded-full bg-[var(--magenta)]/30 blur-sm"></div>
+  </main>
+</body>
+</html>
