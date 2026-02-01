@@ -32,8 +32,7 @@
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    background: radial-gradient(circle at 15% 15%, rgba(255,255,255,0.85), rgba(255,255,255,0.65)),
-      url('https://images.unsplash.com/photo-1514516430035-1f4b9bbf49d4?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+    background: radial-gradient(circle at 15% 15%, rgba(255,255,255,0.85), rgba(255,255,255,0.65));
     box-shadow: 0 20px 45px rgba(20, 10, 30, 0.25);
   }
   .page {
@@ -88,91 +87,27 @@
   .product-grid {
     display: grid;
     gap: 16px;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: stretch;
-  }
-  .product-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-  .product-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-  }
-  .product-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-  }
-  .product-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
   }
   .product-card {
     display: flex;
     flex-direction: column;
-    gap: 2px;
-    padding: 2px;
-    border-radius: 10px;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 16px;
     background: rgba(255, 255, 255, 0.92);
     box-shadow: 0 12px 24px rgba(61, 43, 70, 0.12);
     border: 1px solid rgba(176, 24, 111, 0.12);
     height: 100%;
   }
-  .product-card.staggered {
-    width: 43%;
-  }
-  .product-card.staggered-left {
-    align-self: flex-start;
-    transform: rotate(-1.2deg);
-  }
-  .product-card.staggered-right {
-    align-self: flex-end;
-    transform: rotate(1.4deg);
-  }
-  .product-card.staggered {
-    width: 43%;
-  }
-  .product-card.staggered-left {
-    align-self: flex-start;
-    transform: rotate(-1.2deg);
-  }
-  .product-card.staggered-right {
-    align-self: flex-end;
-    transform: rotate(1.4deg);
-  }
-  .product-card.staggered {
-    width: 43%;
-  }
-  .product-card.staggered-left {
-    align-self: flex-start;
-    transform: rotate(-1.2deg);
-  }
-  .product-card.staggered-right {
-    align-self: flex-end;
-    transform: rotate(1.4deg);
-  }
-  .product-card.staggered {
-    width: 43%;
-  }
-  .product-card.staggered-left {
-    align-self: flex-start;
-    transform: rotate(-1.2deg);
-  }
-  .product-card.staggered-right {
-    align-self: flex-end;
-    transform: rotate(1.4deg);
-  }
   .product-card h3 {
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 600;
     color: var(--magenta-dark);
   }
   .product-card ul {
-    font-size: 8px;
+    font-size: 12px;
   }
   .image-slot {
     position: relative;
@@ -180,17 +115,17 @@
     overflow: hidden;
     background: linear-gradient(140deg, rgba(176, 24, 111, 0.12), rgba(61, 43, 70, 0.15));
     border: 1px solid rgba(176, 24, 111, 0.25);
-    aspect-ratio: 1 / 1;
-    min-height: 32px;
+    aspect-ratio: 4 / 3;
+    min-height: 120px;
   }
   .image-slot.large {
-    aspect-ratio: 4 / 3;
-    min-height: 37px;
+    aspect-ratio: 16 / 9;
+    min-height: 180px;
   }
   .image-slot::before {
     content: '';
     position: absolute;
-    inset: 5px;
+    inset: 8px;
     border-radius: 9px;
     border: 1px dashed rgba(127, 15, 78, 0.35);
   }
@@ -200,8 +135,8 @@
     display: grid;
     place-items: center;
     text-align: center;
-    font-size: 8px;
-    letter-spacing: 0.3em;
+    font-size: 12px;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: rgba(61, 43, 70, 0.55);
   }
@@ -231,40 +166,9 @@
     transform: rotate(-18deg);
     opacity: 0.6;
   }
-  @media print {
-    body {
-      @apply gap-0 py-0;
-    }
-    .page,
-    .a4-container {
-      page-break-after: always;
-      box-shadow: none;
-    }
-  }
   .pattern-dots {
     background-image: radial-gradient(rgba(255,255,255,0.65) 1.5px, transparent 1.5px);
     background-size: 10px 10px;
-  }
-  .hex-frame {
-    width: 210px;
-    height: 190px;
-    clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0 50%);
-    border: 6px solid #ffffff;
-    box-shadow: 0 10px 25px rgba(60, 20, 50, 0.3);
-    overflow: hidden;
-  }
-  .hex-frame.small {
-    width: 170px;
-    height: 150px;
-  }
-  .hex-frame.tiny {
-    width: 150px;
-    height: 130px;
-  }
-  .hex-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
   .slanted-band {
     position: absolute;
@@ -300,17 +204,6 @@
     border-radius: 28px;
     border: 2px solid rgba(176, 24, 111, 0.45);
   }
-  .logo-art::after {
-    content: '';
-    position: absolute;
-    right: -12px;
-    top: -10px;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.9), rgba(176, 24, 111, 0.15));
-    box-shadow: 0 6px 16px rgba(176, 24, 111, 0.35);
-  }
   .logo-art img {
     width: 100%;
     height: 100%;
@@ -323,12 +216,42 @@
     background: linear-gradient(120deg, rgba(176, 24, 111, 0.9), rgba(127, 15, 78, 0.9));
     box-shadow: 0 10px 20px rgba(61, 43, 70, 0.35);
   }
+  .elite-page {
+    background: linear-gradient(180deg, rgba(46, 30, 54, 0.95), rgba(127, 15, 78, 0.9));
+    color: #fff;
+  }
+  .elite-page::before {
+    background: radial-gradient(circle at 15% 15%, rgba(255, 255, 255, 0.2), transparent 60%);
+    opacity: 1;
+  }
+  .elite-page .product-card {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 18px 30px rgba(10, 5, 20, 0.4);
+  }
+  .elite-page .product-card h3,
+  .elite-page .product-card ul {
+    color: #fdf4f9;
+  }
+  .elite-page .image-slot {
+    background: linear-gradient(140deg, rgba(255, 255, 255, 0.15), rgba(176, 24, 111, 0.3));
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+  @media print {
+    body {
+      @apply gap-0 py-0;
+    }
+    .page,
+    .a4-container {
+      page-break-after: always;
+      box-shadow: none;
+    }
+  }
 </style>
 </head>
 <body>
   <main class="a4-container">
-    <div class="absolute inset-0 bg-white/20"></div>
-
+    <div class="absolute inset-0 bg-white/30"></div>
     <div class="slanted-band"></div>
     <div class="absolute right-0 top-0 h-full w-[45%] pattern-dots opacity-40"></div>
 
@@ -344,7 +267,6 @@
               <span class="text-4xl text-[var(--magenta)] font-['Great_Vibes']">Makaron</span>
             </div>
             <p class="text-[13px] italic text-[var(--magenta-dark)]">lezzetin en kıymetlisi</p>
-            <p class="mt-3 text-xs uppercase tracking-[0.35em] text-[var(--plum)]">Özel Seri • El Yapımı Tatlar</p>
           </div>
         </div>
         <div class="text-right text-xs font-semibold uppercase tracking-[0.3em] text-white">
@@ -360,34 +282,23 @@
           </div>
           <div class="ornate-badge inline-flex items-center gap-3 rounded-full px-6 py-3 text-sm text-white">
             <span class="text-lg">✦</span>
-            <span class="font-semibold uppercase tracking-[0.35em]">Signature Collection</span>
+            <span class="font-semibold uppercase tracking-[0.35em]">Gıda Profesyonellerine Özel</span>
             <span class="text-lg">✦</span>
-          </div>
-          <div class="flex items-center gap-6 text-sm">
-            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--magenta)] text-white">@</div>
-            <div>
-              <p class="font-semibold text-[var(--plum)]">website</p>
-              <p class="font-bold text-[var(--plum)]">www.aytartmakaron.com</p>
-            </div>
-          </div>
-          <div class="flex items-center gap-6 text-sm">
-            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--magenta)] text-white">☎</div>
-            <div class="space-y-1">
-              <p class="font-semibold text-[var(--plum)]">0312 255 4105</p>
-              <p class="font-semibold text-[var(--plum)]">0539 711 9914</p>
-            </div>
           </div>
         </div>
 
-        <div class="relative flex flex-col items-end gap-6 pr-6">
-          <div class="hex-frame small border-[var(--magenta-dark)]">
-            <img alt="Makaron Tabağı" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=600&q=80"/>
+        <div class="flex flex-col gap-6">
+          <div>
+            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.35em] text-white">İçi Dolu Tart Modelleri</p>
+            <div class="image-slot large bg-white/80">
+              <span>Görsel Alanı</span>
+            </div>
           </div>
-          <div class="hex-frame border-[var(--magenta)]">
-            <img alt="Çilekli Tatlılar" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80"/>
-          </div>
-          <div class="hex-frame tiny border-[var(--plum)]">
-            <img alt="Mini Tart Çeşitleri" src="https://images.unsplash.com/photo-1505252585461-04db1eb84625?auto=format&fit=crop&w=600&q=80"/>
+          <div>
+            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.35em] text-white">Macaron</p>
+            <div class="image-slot large bg-white/80">
+              <span>Görsel Alanı</span>
+            </div>
           </div>
         </div>
       </div>
@@ -398,6 +309,7 @@
     <div class="absolute left-10 top-48 h-14 w-40 rounded-full bg-white/70 blur-[1px]"></div>
     <div class="absolute bottom-24 right-32 h-20 w-20 rounded-full bg-[var(--magenta)]/30 blur-sm"></div>
   </main>
+
   <section class="page tartlet-page">
     <div class="absolute inset-0 pattern-dots opacity-30"></div>
     <div class="fleur left-10 top-10"></div>
@@ -408,41 +320,91 @@
     <div class="page-content">
       <div class="page-header">
         <div class="page-title">
-          <p class="text-sm uppercase tracking-[0.4em] text-[var(--magenta-dark)]">2. Grup</p>
+          <p class="text-sm uppercase tracking-[0.4em] text-[var(--magenta-dark)]">Sayfa 2</p>
           <h2 class="text-3xl font-semibold text-[var(--plum)]">Tartlet Modelleri</h2>
-          <p class="text-sm text-neutral-600">8 çeşit profesyonel tartlet modeli.</p>
+          <p class="text-sm text-neutral-600">Profesyonel tartlet koleksiyonu.</p>
         </div>
         <span class="rounded-full bg-[var(--magenta)] px-6 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white">Tartlet</span>
       </div>
-      <div class="product-stack">
-        <div class="product-card staggered staggered-right">
+      <div class="product-grid">
+        <div class="product-card">
           <h3>4 cm Yuvarlak Tartlet</h3>
-          <div class="image-slot large">
-            <span>Fotoğraf</span>
+          <div class="image-slot">
+            <span>Ürün Görseli</span>
           </div>
           <ul class="space-y-2 text-sm text-neutral-700">
-            <li>Koli içi: 324 adet</li>
-            <li>Mini porsiyon tatlılar için ideal</li>
+            <li><strong>Ölçü:</strong> 4 cm</li>
+            <li><strong>Koli içi:</strong> 324 adet</li>
           </ul>
         </div>
-        <div class="product-card staggered staggered-left">
+        <div class="product-card">
           <h3>4 cm Kare Tartlet</h3>
-          <div class="image-slot large">
-            <span>Fotoğraf</span>
+          <div class="image-slot">
+            <span>Ürün Görseli</span>
           </div>
           <ul class="space-y-2 text-sm text-neutral-700">
-            <li>Koli içi: 324 adet</li>
-            <li>Keskin hatlı modern sunumlar</li>
+            <li><strong>Ölçü:</strong> 4 cm</li>
+            <li><strong>Koli içi:</strong> 324 adet</li>
           </ul>
         </div>
-        <div class="product-card staggered staggered-right">
-          <h3>Kayık Tartlet</h3>
-          <div class="image-slot large">
-            <span>Fotoğraf</span>
+        <div class="product-card">
+          <h3>6 cm Yuvarlak Tartlet</h3>
+          <div class="image-slot">
+            <span>Ürün Görseli</span>
           </div>
           <ul class="space-y-2 text-sm text-neutral-700">
-            <li>5 cm küçük kayık • 252 adet</li>
-            <li>9 cm büyük kayık • 135 adet</li>
+            <li><strong>Ölçü:</strong> 6 cm</li>
+            <li><strong>Koli içi:</strong> 180 adet</li>
+          </ul>
+        </div>
+        <div class="product-card">
+          <h3>9 × 3 cm Oval Tartlet</h3>
+          <div class="image-slot">
+            <span>Ürün Görseli</span>
+          </div>
+          <ul class="space-y-2 text-sm text-neutral-700">
+            <li><strong>Ölçü:</strong> 9 × 3 cm</li>
+            <li><strong>Koli içi:</strong> </li>
+          </ul>
+        </div>
+        <div class="product-card">
+          <h3>5 cm Küçük Tartlet</h3>
+          <div class="image-slot">
+            <span>Ürün Görseli</span>
+          </div>
+          <ul class="space-y-2 text-sm text-neutral-700">
+            <li><strong>Ölçü:</strong> 5 cm</li>
+            <li><strong>Koli içi:</strong> 252 adet</li>
+          </ul>
+        </div>
+        <div class="product-card">
+          <h3>9 cm Büyük Tartlet</h3>
+          <div class="image-slot">
+            <span>Ürün Görseli</span>
+          </div>
+          <ul class="space-y-2 text-sm text-neutral-700">
+            <li><strong>Ölçü:</strong> 9 cm</li>
+            <li><strong>Koli içi:</strong> 135 adet</li>
+          </ul>
+        </div>
+        <div class="product-card">
+          <h3>9 cm Yuvarlak Tartlet</h3>
+          <div class="image-slot">
+            <span>Ürün Görseli</span>
+          </div>
+          <ul class="space-y-2 text-sm text-neutral-700">
+            <li><strong>Ölçü:</strong> 9 cm</li>
+            <li><strong>Koli içi:</strong> 72 adet</li>
+          </ul>
+        </div>
+        <div class="product-card">
+          <h3>9 cm Büyük Kare Tartlet</h3>
+          <div class="image-slot">
+            <span>Ürün Görseli</span>
+          </div>
+          <ul class="space-y-2 text-sm text-neutral-700">
+            <li><strong>Ölçü:</strong> 9 cm</li>
+            <li><strong>Koli içi:</strong> 81 adet</li>
           </ul>
         </div>
       </div>
@@ -453,52 +415,47 @@
     </div>
   </section>
 
-  <section class="page">
-    <div class="absolute inset-0 pattern-dots opacity-25"></div>
+  <section class="page elite-page">
+    <div class="absolute inset-0 pattern-dots opacity-20"></div>
     <div class="fleur right-12 top-12"></div>
     <div class="fleur left-16 bottom-12"></div>
     <div class="page-content">
       <div class="page-header">
         <div class="page-title">
-          <p class="text-sm uppercase tracking-[0.4em] text-[var(--magenta-dark)]">3. Grup</p>
-          <h2 class="text-3xl font-semibold text-[var(--plum)]">Elit Tartlet Modelleri</h2>
-          <p class="text-sm text-neutral-600">El yapımı, 8 çeşit seçkin tartlet koleksiyonu.</p>
+          <p class="text-sm uppercase tracking-[0.4em] text-white/80">Sayfa 3</p>
+          <h2 class="text-3xl font-semibold text-white">Elite Tartlet Modelleri – El Yapımı</h2>
+          <p class="text-sm text-white/80">Premium sunumlar için seçkin seri.</p>
         </div>
-        <span class="rounded-full bg-[var(--magenta-dark)] px-6 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white">Elit Seri</span>
+        <span class="rounded-full bg-white/20 px-6 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white">Premium</span>
       </div>
-      <div class="product-stack">
-        <div class="product-card staggered staggered-right">
-          <h3>Elit Tartlet Çeşitleri</h3>
+      <div class="product-grid">
+        <div class="product-card">
+          <h3>Elite Tartlet Modelleri</h3>
           <div class="image-slot">
-            <span>Fotoğraf</span>
+            <span>Ürün Görseli</span>
           </div>
-          <ul class="space-y-2 text-sm text-neutral-700">
-            <li>Toplam 8 çeşit el yapımı</li>
-            <li>Premium vitrin sunumları</li>
+          <ul class="space-y-2 text-sm">
+            <li><strong>Ölçü:</strong> 18 cm Yuvarlak Tartlet</li>
+            <li><strong>Koli içi:</strong> 36 adet</li>
+            <li>Elite modellerimiz 8 çeşittir.</li>
+            <li>Küçük boy bulunmamaktadır.</li>
+            <li>Bunun yerine 18 cm Yuvarlak Tartlet sunulmaktadır.</li>
           </ul>
         </div>
-        <div class="product-card staggered staggered-left">
-          <h3>18 cm Yuvarlak Tartlet</h3>
+        <div class="product-card">
+          <h3>Elite Sunum Notları</h3>
           <div class="image-slot">
-            <span>Fotoğraf</span>
+            <span>Ürün Görseli</span>
           </div>
-          <ul class="space-y-2 text-sm text-neutral-700">
-            <li>Koli içi: 36 adet</li>
-            <li>Elit seride ekstra ürün</li>
-          </ul>
-        </div>
-        <div class="product-card staggered staggered-right">
-          <h3>Elit Tartlet Notları</h3>
-          <div class="image-slot">
-            <span>Fotoğraf</span>
-          </div>
-          <ul class="space-y-2 text-sm text-neutral-700">
-            <li>Küçük kayık (5 cm) yoktur</li>
-            <li>Özel sipariş için iletişime geçiniz</li>
+          <ul class="space-y-2 text-sm">
+            <li><strong>Ölçü:</strong> Premium vitrin uyumu</li>
+            <li><strong>Koli içi:</strong> 36 adet</li>
+            <li>El yapımı üretim standardı</li>
+            <li>Özel menü planlamalarına uygun</li>
           </ul>
         </div>
       </div>
-      <div class="mt-auto flex items-center justify-between text-xs text-neutral-500">
+      <div class="mt-auto flex items-center justify-between text-xs text-white/70">
         <span>Ürün kataloğu</span>
         <span>Sayfa 3</span>
       </div>
@@ -512,42 +469,22 @@
     <div class="page-content">
       <div class="page-header">
         <div class="page-title">
-          <p class="text-sm uppercase tracking-[0.4em] text-[var(--magenta-dark)]">4. Grup</p>
-          <h2 class="text-3xl font-semibold text-[var(--plum)]">Sable Tabanları</h2>
-          <p class="text-sm text-neutral-600">Koli içi adet seçenekleri.</p>
+          <p class="text-sm uppercase tracking-[0.4em] text-[var(--magenta-dark)]">Sayfa 4</p>
+          <h2 class="text-3xl font-semibold text-[var(--plum)]">Macaron</h2>
+          <p class="text-sm text-neutral-600">Renkli ve zarif makaron seçenekleri.</p>
         </div>
-        <span class="rounded-full bg-[var(--plum)] px-6 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white">Sable</span>
+        <span class="rounded-full bg-[var(--plum)] px-6 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white">Macaron</span>
       </div>
-      <div class="product-stack">
-        <div class="product-card staggered staggered-right">
-          <h3>6 cm Yuvarlak</h3>
-          <div class="image-slot">
-            <span>Fotoğraf</span>
-          </div>
-          <ul class="space-y-2 text-sm text-neutral-700">
-            <li>Koli içi: 360 adet</li>
-            <li>Klasik sablé taban</li>
-          </ul>
+      <div class="grid grid-cols-1 gap-6">
+        <div class="image-slot large">
+          <span>Macaron Görsel Alanı</span>
         </div>
-        <div class="product-card staggered staggered-left">
-          <h3>6 cm Kare</h3>
-          <div class="image-slot">
-            <span>Fotoğraf</span>
-          </div>
+        <div class="product-card">
+          <h3>Macaron Seçenekleri</h3>
           <ul class="space-y-2 text-sm text-neutral-700">
-            <li>Koli içi: 144 adet</li>
-            <li>Keskin köşeli sunumlar</li>
-          </ul>
-        </div>
-        <div class="product-card staggered staggered-right">
-          <h3>9 cm &amp; Elips</h3>
-          <div class="image-slot">
-            <span>Fotoğraf</span>
-          </div>
-          <ul class="space-y-2 text-sm text-neutral-700">
-            <li>9 cm yuvarlak • 144 adet</li>
-            <li>9 cm kare • 144 adet</li>
-            <li>9 × 3 cm elips • 288 adet</li>
+            <li><strong>Ölçü:</strong> Standart macaron</li>
+            <li><strong>Koli içi:</strong> 36 × 13 adet</li>
+            <li><strong>Koli içi:</strong> 6 × 50 adet</li>
           </ul>
         </div>
       </div>
@@ -565,43 +502,39 @@
     <div class="page-content">
       <div class="page-header">
         <div class="page-title">
-          <p class="text-sm uppercase tracking-[0.4em] text-[var(--magenta-dark)]">5. Grup</p>
-          <h2 class="text-3xl font-semibold text-[var(--plum)]">Macaron &amp; Atıştırmalıklar</h2>
-          <p class="text-sm text-neutral-600">Makaron ve tamamlayıcı ürünler.</p>
+          <p class="text-sm uppercase tracking-[0.4em] text-[var(--magenta-dark)]">Sayfa 5</p>
+          <h2 class="text-3xl font-semibold text-[var(--plum)]">İletişim</h2>
+          <p class="text-sm text-neutral-600">Sorularınız ve siparişleriniz için bize ulaşın.</p>
         </div>
-        <span class="rounded-full bg-[var(--magenta)] px-6 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white">Macaron</span>
+        <span class="rounded-full bg-[var(--magenta)] px-6 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white">İletişim</span>
       </div>
-      <div class="product-stack">
-        <div class="product-card staggered staggered-right">
-          <h3>Macaron 36 × 13</h3>
-          <div class="image-slot">
-            <span>Fotoğraf</span>
-          </div>
+      <div class="grid grid-cols-2 gap-6">
+        <div class="product-card">
+          <h3>Adres</h3>
           <ul class="space-y-2 text-sm text-neutral-700">
-            <li>Koli içi: 36 × 13 adet</li>
-            <li>Renkli karışık kutular</li>
+            <li>Güzeller Mah. 220 Sok. No: 3</li>
+            <li>Kepez / Antalya</li>
           </ul>
         </div>
-        <div class="product-card staggered staggered-left">
-          <h3>Macaron 6 × 50</h3>
-          <div class="image-slot">
-            <span>Fotoğraf</span>
-          </div>
+        <div class="product-card">
+          <h3>Telefon</h3>
           <ul class="space-y-2 text-sm text-neutral-700">
-            <li>Koli içi: 6 × 50 adet</li>
-            <li>Toplu sipariş sunumları</li>
+            <li>0 592 216 75 62</li>
           </ul>
         </div>
-        <div class="product-card staggered staggered-right">
-          <h3>Atıştırmalık Çeşitleri</h3>
+        <div class="product-card">
+          <h3>E-mail</h3>
+          <ul class="space-y-2 text-sm text-neutral-700">
+            <li>ayedtgida@gmail.com</li>
+          </ul>
+        </div>
+        <div class="product-card">
+          <h3>Instagram</h3>
           <div class="image-slot">
-            <span>Fotoğraf</span>
+            <span>Instagram Alanı</span>
           </div>
           <ul class="space-y-2 text-sm text-neutral-700">
-            <li>Kedi dili • 200 gr × 30 adet</li>
-            <li>Mini sarma kornet • 7 cm • 1000 adet</li>
-            <li>Profiterol topu • 260-290 adet</li>
-            <li>Grissini • 200 gr × 30 adet</li>
+            <li>Placeholder</li>
           </ul>
         </div>
       </div>
