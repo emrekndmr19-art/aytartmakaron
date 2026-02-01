@@ -61,6 +61,32 @@
     flex-direction: column;
     gap: 24px;
   }
+  .image-slot {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    background: linear-gradient(140deg, rgba(176, 24, 111, 0.12), rgba(61, 43, 70, 0.15));
+    border: 1px solid rgba(176, 24, 111, 0.25);
+    min-height: 220px;
+  }
+  .image-slot::before {
+    content: '';
+    position: absolute;
+    inset: 14px;
+    border-radius: 18px;
+    border: 1px dashed rgba(127, 15, 78, 0.35);
+  }
+  .image-slot span {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(61, 43, 70, 0.55);
+  }
   @media print {
     body {
       @apply gap-0 py-0;
@@ -259,6 +285,17 @@
           </ul>
         </div>
       </div>
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div class="image-slot lg:col-span-1">
+          <span>4 cm Yuvarlak Tartlet Fotoğrafı</span>
+        </div>
+        <div class="image-slot lg:col-span-1">
+          <span>4 cm Kare Tartlet Fotoğrafı</span>
+        </div>
+        <div class="image-slot md:col-span-2 lg:col-span-1">
+          <span>Kayık Tartlet Fotoğrafı</span>
+        </div>
+      </div>
       <div class="mt-auto flex items-center justify-between text-xs text-neutral-500">
         <span>Ürün kataloğu</span>
         <span>Sayfa 2</span>
@@ -294,6 +331,14 @@
           </div>
         </div>
       </div>
+      <div class="grid gap-6 md:grid-cols-2">
+        <div class="image-slot">
+          <span>Elit Tartlet Fotoğrafı</span>
+        </div>
+        <div class="image-slot">
+          <span>18 cm Yuvarlak Tartlet Fotoğrafı</span>
+        </div>
+      </div>
       <div class="mt-auto flex items-center justify-between text-xs text-neutral-500">
         <span>Ürün kataloğu</span>
         <span>Sayfa 3</span>
@@ -315,6 +360,14 @@
         <div class="rounded-2xl bg-white/90 p-5 text-sm text-neutral-700 shadow-md ring-1 ring-[var(--silver)]">9 cm yuvarlak • 144 adet</div>
         <div class="rounded-2xl bg-white/90 p-5 text-sm text-neutral-700 shadow-md ring-1 ring-[var(--silver)]">9 cm kare • 144 adet</div>
         <div class="rounded-2xl bg-white/90 p-5 text-sm text-neutral-700 shadow-md ring-1 ring-[var(--silver)]">9 × 3 cm elips • 288 adet</div>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2">
+        <div class="image-slot">
+          <span>Sable Tabanı Fotoğrafı</span>
+        </div>
+        <div class="image-slot">
+          <span>Elips Sable Tabanı Fotoğrafı</span>
+        </div>
       </div>
       <div class="mt-auto flex items-center justify-between text-xs text-neutral-500">
         <span>Ürün kataloğu</span>
@@ -352,6 +405,14 @@
             <li>Profiterol topu (dökme) • 260-290 adet • 1250 gr</li>
             <li>Grissini çeşitleri • 200 gr × 30 adet</li>
           </ul>
+        </div>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2">
+        <div class="image-slot">
+          <span>Macaron Fotoğrafı</span>
+        </div>
+        <div class="image-slot">
+          <span>Atıştırmalık Çeşitleri Fotoğrafı</span>
         </div>
       </div>
       <div class="mt-auto flex items-center justify-between text-xs text-neutral-500">
