@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ay Bakery | 2024 Koleksiyonu</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Great+Vibes&amp;family=Montserrat:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+        :root {
+            --primary-burgundy: #8B1E23;
+            --cream: #FFFBF2;
+            --gold: #D4AF37;
+            --gold-light: #FBF5B7;
+        }
+        @layer base {
+            body {
+                @apply bg-[#f8f5f0] text-gray-900 overflow-x-hidden;
+                font-family: 'Cormorant Garamond', serif;
+            }
+        }
+        .a4-container {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            background-color: var(--cream);
+        }
+        .gold-border-frame {
+            border: 2px solid var(--gold);
+            padding: 2px;
+            position: relative;
+        }
+        .gold-border-frame::before {
+            content: '';
+            position: absolute;
+            inset: 4px;
+            border: 1px solid var(--gold);
+            pointer-events: none;
+        }
+        .vignette {
+            background: radial-gradient(circle, transparent 40%, rgba(0,0,0,0.3) 100%);
+        }
+    </style>
+</head>
+<body class="py-20 flex justify-center items-center min-h-screen bg-gray-100">
+<div class="a4-container overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Luxury Pastry Background" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpJ5JocVKziGQXLI0xzFhb-dF430j16T_1wBPfeA3U4-67KzgLwZY_k7l-E7INcevtbYgXKsRXlC9YBhY6cxcfW0u3zh1dMVcdvkSei_CVUWHczrCf1CTPWNtLcZSEThIv1K8LWSgKHpXxZNQlmbTZiEz2iyx_s3wHuUmEAlIF6YO8681GJKT1D2vtovwD9au4w4zGsTpAGD7wplXBjHu4QEvqnq7DAOZCliKd-r-3Pz9DeieEKkM1tIrIuk0zUEaih43vKJBYlyTY"/>
+<div class="absolute inset-0 vignette"></div>
+<div class="absolute inset-0 bg-black/10"></div>
+</div>
+<div class="relative z-10 h-full w-full flex flex-col items-center justify-center p-12">
+<div class="bg-white/90 backdrop-blur-sm p-12 text-center max-w-lg w-full gold-border-frame shadow-2xl">
+<div class="mb-8 flex flex-col items-center">
+<div class="flex items-center space-x-2">
+<span class="font-['Great_Vibes'] text-7xl text-[var(--primary-burgundy)]">Ay</span>
+<div class="flex flex-col items-start border-l border-[var(--primary-burgundy)]/30 pl-4 mt-2">
+<span class="font-['Montserrat'] tracking-[0.4em] text-sm font-semibold uppercase text-[var(--primary-burgundy)]">Bakery</span>
+<span class="font-['Cormorant_Garamond'] italic text-xs tracking-widest text-[var(--primary-burgundy)]/70 uppercase">Pâtisserie d'Excellence</span>
+</div>
+</div>
+</div>
+<div class="w-24 h-[1px] bg-[var(--gold)] mx-auto mb-8 opacity-60"></div>
+<div class="space-y-4">
+<h1 class="font-['Playfair_Display'] text-5xl uppercase tracking-[0.15em] text-[var(--primary-burgundy)] font-normal">
+                        2024
+                    </h1>
+<h2 class="font-['Playfair_Display'] text-4xl italic tracking-[0.05em] text-[var(--primary-burgundy)]">
+                        Koleksiyonu
+                    </h2>
+</div>
+<div class="mt-10">
+<p class="font-['Great_Vibes'] text-3xl text-[var(--gold)]">
+                        Sanatla Yoğrulan Lezzetler
+                    </p>
+</div>
+</div>
+<div class="absolute bottom-16 text-center space-y-6">
+<div class="flex items-center justify-center space-x-4">
+<div class="w-12 h-[1px] bg-white/50"></div>
+<span class="text-white font-['Montserrat'] text-[10px] uppercase tracking-[0.5em]">Paris &amp; Istanbul</span>
+<div class="w-12 h-[1px] bg-white/50"></div>
+</div>
+<div class="flex justify-center space-x-8">
+<span class="material-symbols-outlined text-white/80 font-light text-xl">auto_awesome</span>
+<span class="material-symbols-outlined text-white/80 font-light text-xl">temp_preferences_custom</span>
+<span class="material-symbols-outlined text-white/80 font-light text-xl">verified</span>
+</div>
+</div>
+</div>
+<div class="absolute top-0 left-0 w-32 h-32 border-t-2 border-l-2 border-[var(--gold)]/30 m-8 pointer-events-none"></div>
+<div class="absolute top-0 right-0 w-32 h-32 border-t-2 border-r-2 border-[var(--gold)]/30 m-8 pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 w-32 h-32 border-b-2 border-l-2 border-[var(--gold)]/30 m-8 pointer-events-none"></div>
+<div class="absolute bottom-0 right-0 w-32 h-32 border-b-2 border-r-2 border-[var(--gold)]/30 m-8 pointer-events-none"></div>
+</div>
+<div class="fixed bottom-8 right-8 flex flex-col items-end space-y-4">
+<button class="bg-[var(--primary-burgundy)] text-white p-4 rounded-full shadow-xl hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">download</span>
+</button>
+<p class="text-[10px] font-['Montserrat'] uppercase tracking-widest text-gray-400 rotate-90 origin-right translate-y-12">Digital Edition</p>
+</div>
+
+</body></html>
