@@ -101,6 +101,11 @@
     flex-direction: column;
     gap: 22px;
   }
+  .product-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
   .product-card {
     display: flex;
     flex-direction: column;
@@ -111,6 +116,17 @@
     box-shadow: 0 12px 24px rgba(61, 43, 70, 0.12);
     border: 1px solid rgba(176, 24, 111, 0.12);
     height: 100%;
+  }
+  .product-card.staggered {
+    width: 86%;
+  }
+  .product-card.staggered-left {
+    align-self: flex-start;
+    transform: rotate(-1.2deg);
+  }
+  .product-card.staggered-right {
+    align-self: flex-end;
+    transform: rotate(1.4deg);
   }
   .product-card.staggered {
     width: 86%;
@@ -431,8 +447,8 @@
         </div>
         <span class="rounded-full bg-[var(--magenta-dark)] px-6 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white">Elit Seri</span>
       </div>
-      <div class="product-grid">
-        <div class="product-card">
+      <div class="product-stack">
+        <div class="product-card staggered staggered-right">
           <h3>Elit Tartlet Çeşitleri</h3>
           <div class="image-slot">
             <span>Fotoğraf</span>
@@ -442,7 +458,7 @@
             <li>Premium vitrin sunumları</li>
           </ul>
         </div>
-        <div class="product-card">
+        <div class="product-card staggered staggered-left">
           <h3>18 cm Yuvarlak Tartlet</h3>
           <div class="image-slot">
             <span>Fotoğraf</span>
@@ -452,7 +468,7 @@
             <li>Elit seride ekstra ürün</li>
           </ul>
         </div>
-        <div class="product-card">
+        <div class="product-card staggered staggered-right">
           <h3>Elit Tartlet Notları</h3>
           <div class="image-slot">
             <span>Fotoğraf</span>
@@ -483,8 +499,8 @@
         </div>
         <span class="rounded-full bg-[var(--plum)] px-6 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white">Sable</span>
       </div>
-      <div class="product-grid">
-        <div class="product-card">
+      <div class="product-stack">
+        <div class="product-card staggered staggered-right">
           <h3>6 cm Yuvarlak</h3>
           <div class="image-slot">
             <span>Fotoğraf</span>
@@ -494,7 +510,7 @@
             <li>Klasik sablé taban</li>
           </ul>
         </div>
-        <div class="product-card">
+        <div class="product-card staggered staggered-left">
           <h3>6 cm Kare</h3>
           <div class="image-slot">
             <span>Fotoğraf</span>
@@ -504,7 +520,7 @@
             <li>Keskin köşeli sunumlar</li>
           </ul>
         </div>
-        <div class="product-card">
+        <div class="product-card staggered staggered-right">
           <h3>9 cm &amp; Elips</h3>
           <div class="image-slot">
             <span>Fotoğraf</span>
@@ -536,8 +552,8 @@
         </div>
         <span class="rounded-full bg-[var(--magenta)] px-6 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white">Macaron</span>
       </div>
-      <div class="product-grid">
-        <div class="product-card">
+      <div class="product-stack">
+        <div class="product-card staggered staggered-right">
           <h3>Macaron 36 × 13</h3>
           <div class="image-slot">
             <span>Fotoğraf</span>
@@ -547,7 +563,7 @@
             <li>Renkli karışık kutular</li>
           </ul>
         </div>
-        <div class="product-card">
+        <div class="product-card staggered staggered-left">
           <h3>Macaron 6 × 50</h3>
           <div class="image-slot">
             <span>Fotoğraf</span>
@@ -557,7 +573,7 @@
             <li>Toplu sipariş sunumları</li>
           </ul>
         </div>
-        <div class="product-card">
+        <div class="product-card staggered staggered-right">
           <h3>Atıştırmalık Çeşitleri</h3>
           <div class="image-slot">
             <span>Fotoğraf</span>
