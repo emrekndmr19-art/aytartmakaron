@@ -22,6 +22,9 @@
       font-family: 'Montserrat', sans-serif;
     }
   }
+  body {
+    @apply flex flex-col gap-10 py-10;
+  }
   .a4-container {
     width: 210mm;
     height: 297mm;
@@ -31,6 +34,68 @@
     background: radial-gradient(circle at 15% 15%, rgba(255,255,255,0.85), rgba(255,255,255,0.65)),
       url('https://images.unsplash.com/photo-1514516430035-1f4b9bbf49d4?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
     box-shadow: 0 20px 45px rgba(20, 10, 30, 0.25);
+  }
+  .page {
+    width: 210mm;
+    height: 297mm;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(247, 240, 244, 0.9));
+    box-shadow: 0 20px 45px rgba(20, 10, 30, 0.2);
+  }
+  .page::after {
+    content: '';
+    position: absolute;
+    inset: 18px;
+    border-radius: 32px;
+    border: 1px solid rgba(61, 43, 70, 0.12);
+    pointer-events: none;
+  }
+  .page-content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    padding: 48px 54px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .image-slot {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    background: linear-gradient(140deg, rgba(176, 24, 111, 0.12), rgba(61, 43, 70, 0.15));
+    border: 1px solid rgba(176, 24, 111, 0.25);
+    min-height: 220px;
+  }
+  .image-slot::before {
+    content: '';
+    position: absolute;
+    inset: 14px;
+    border-radius: 18px;
+    border: 1px dashed rgba(127, 15, 78, 0.35);
+  }
+  .image-slot span {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(61, 43, 70, 0.55);
+  }
+  @media print {
+    body {
+      @apply gap-0 py-0;
+    }
+    .page,
+    .a4-container {
+      page-break-after: always;
+      box-shadow: none;
+    }
   }
   .pattern-dots {
     background-image: radial-gradient(rgba(255,255,255,0.65) 1.5px, transparent 1.5px);
@@ -116,7 +181,7 @@
   }
 </style>
 </head>
-<body class="py-10">
+<body>
   <main class="a4-container">
     <div class="absolute inset-0 bg-white/20"></div>
 
@@ -189,5 +254,172 @@
     <div class="absolute left-10 top-48 h-14 w-40 rounded-full bg-white/70 blur-[1px]"></div>
     <div class="absolute bottom-24 right-32 h-20 w-20 rounded-full bg-[var(--magenta)]/30 blur-sm"></div>
   </main>
+  <section class="page">
+    <div class="absolute inset-0 pattern-dots opacity-30"></div>
+    <div class="page-content">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-sm uppercase tracking-[0.4em] text-[var(--magenta-dark)]">2. Grup</p>
+          <h2 class="text-3xl font-semibold text-[var(--plum)]">Tartlet Modelleri</h2>
+          <p class="mt-2 text-sm text-neutral-600">8 çeşit profesyonel tartlet modeli.</p>
+        </div>
+        <span class="rounded-full bg-[var(--magenta)] px-6 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white">Tartlet</span>
+      </div>
+      <div class="grid gap-6 lg:grid-cols-2">
+        <div class="rounded-2xl bg-white/90 p-6 shadow-md ring-1 ring-[var(--silver)]">
+          <h3 class="text-lg font-semibold text-[var(--magenta-dark)]">Mini &amp; Klasik</h3>
+          <ul class="mt-4 space-y-3 text-sm text-neutral-700">
+            <li>4 cm yuvarlak tartlet • Koli içi: 324 adet</li>
+            <li>4 cm kare tartlet • Koli içi: 324 adet</li>
+            <li>5 cm küçük kayık tartlet • Koli içi: 252 adet</li>
+            <li>6 cm yuvarlak tartlet • Koli içi: 180 adet</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl bg-white/90 p-6 shadow-md ring-1 ring-[var(--silver)]">
+          <h3 class="text-lg font-semibold text-[var(--magenta-dark)]">Özel Ölçüler</h3>
+          <ul class="mt-4 space-y-3 text-sm text-neutral-700">
+            <li>9 × 3 cm oval tartlet • Koli içi: adet bilgisi talep ediniz</li>
+            <li>9 cm büyük kayık tartlet • Koli içi: 135 adet</li>
+            <li>9 cm yuvarlak tartlet • Koli içi: 72 adet</li>
+            <li>9 cm büyük kare tartlet • Koli içi: 81 adet</li>
+          </ul>
+        </div>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div class="image-slot lg:col-span-1">
+          <span>4 cm Yuvarlak Tartlet Fotoğrafı</span>
+        </div>
+        <div class="image-slot lg:col-span-1">
+          <span>4 cm Kare Tartlet Fotoğrafı</span>
+        </div>
+        <div class="image-slot md:col-span-2 lg:col-span-1">
+          <span>Kayık Tartlet Fotoğrafı</span>
+        </div>
+      </div>
+      <div class="mt-auto flex items-center justify-between text-xs text-neutral-500">
+        <span>Ürün kataloğu</span>
+        <span>Sayfa 2</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="absolute inset-0 pattern-dots opacity-25"></div>
+    <div class="page-content">
+      <div>
+        <p class="text-sm uppercase tracking-[0.4em] text-[var(--magenta-dark)]">3. Grup</p>
+        <h2 class="text-3xl font-semibold text-[var(--plum)]">Elit Tartlet Modelleri</h2>
+        <p class="mt-2 text-sm text-neutral-600">El yapımı, 8 çeşit seçkin tartlet koleksiyonu.</p>
+      </div>
+      <div class="grid gap-6 lg:grid-cols-[1.1fr_1fr]">
+        <div class="rounded-2xl bg-white/90 p-6 shadow-md ring-1 ring-[var(--silver)]">
+          <h3 class="text-lg font-semibold text-[var(--magenta-dark)]">El Yapımı Notları</h3>
+          <ul class="mt-4 space-y-3 text-sm text-neutral-700">
+            <li>Elit modellerde toplam 8 çeşit bulunur.</li>
+            <li>Küçük kayık (5 cm) modeli bulunmamaktadır.</li>
+            <li>Yerine 18 cm yuvarlak tartlet eklenmiştir • Koli içi: 36 adet.</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl bg-white/90 p-6 shadow-md ring-1 ring-[var(--silver)]">
+          <h3 class="text-lg font-semibold text-[var(--magenta-dark)]">Sunum Önerisi</h3>
+          <p class="mt-4 text-sm text-neutral-700">
+            Elit tartletler özel vitrin sunumları ve premium tatlı tabakları için idealdir.
+            Özel siparişlerde teslim gününü netleştirmek için bizimle iletişime geçiniz.
+          </p>
+          <div class="mt-6 rounded-xl bg-[var(--cream)]/80 p-4 text-xs text-neutral-600">
+            Not: Katalog görseli için elit tartlet çeşitlerinin fotoğrafı eklenmelidir.
+          </div>
+        </div>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2">
+        <div class="image-slot">
+          <span>Elit Tartlet Fotoğrafı</span>
+        </div>
+        <div class="image-slot">
+          <span>18 cm Yuvarlak Tartlet Fotoğrafı</span>
+        </div>
+      </div>
+      <div class="mt-auto flex items-center justify-between text-xs text-neutral-500">
+        <span>Ürün kataloğu</span>
+        <span>Sayfa 3</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="absolute inset-0 pattern-dots opacity-25"></div>
+    <div class="page-content">
+      <div>
+        <p class="text-sm uppercase tracking-[0.4em] text-[var(--magenta-dark)]">4. Grup</p>
+        <h2 class="text-3xl font-semibold text-[var(--plum)]">Sable Tabanları</h2>
+        <p class="mt-2 text-sm text-neutral-600">Koli içi adet seçenekleri.</p>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-2xl bg-white/90 p-5 text-sm text-neutral-700 shadow-md ring-1 ring-[var(--silver)]">6 cm yuvarlak • 360 adet</div>
+        <div class="rounded-2xl bg-white/90 p-5 text-sm text-neutral-700 shadow-md ring-1 ring-[var(--silver)]">6 cm kare • 144 adet</div>
+        <div class="rounded-2xl bg-white/90 p-5 text-sm text-neutral-700 shadow-md ring-1 ring-[var(--silver)]">9 cm yuvarlak • 144 adet</div>
+        <div class="rounded-2xl bg-white/90 p-5 text-sm text-neutral-700 shadow-md ring-1 ring-[var(--silver)]">9 cm kare • 144 adet</div>
+        <div class="rounded-2xl bg-white/90 p-5 text-sm text-neutral-700 shadow-md ring-1 ring-[var(--silver)]">9 × 3 cm elips • 288 adet</div>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2">
+        <div class="image-slot">
+          <span>Sable Tabanı Fotoğrafı</span>
+        </div>
+        <div class="image-slot">
+          <span>Elips Sable Tabanı Fotoğrafı</span>
+        </div>
+      </div>
+      <div class="mt-auto flex items-center justify-between text-xs text-neutral-500">
+        <span>Ürün kataloğu</span>
+        <span>Sayfa 4</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="absolute inset-0 pattern-dots opacity-25"></div>
+    <div class="page-content">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-sm uppercase tracking-[0.4em] text-[var(--magenta-dark)]">5. Grup</p>
+          <h2 class="text-3xl font-semibold text-[var(--plum)]">Macaron &amp; Atıştırmalıklar</h2>
+          <p class="mt-2 text-sm text-neutral-600">Makaron ve tamamlayıcı ürünler.</p>
+        </div>
+        <span class="rounded-full bg-[var(--magenta)] px-6 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white">Macaron</span>
+      </div>
+      <div class="grid gap-6 lg:grid-cols-2">
+        <div class="rounded-2xl bg-white/90 p-6 shadow-md ring-1 ring-[var(--silver)]">
+          <h3 class="text-lg font-semibold text-[var(--magenta-dark)]">Macaron</h3>
+          <ul class="mt-4 space-y-3 text-sm text-neutral-700">
+            <li>Koli içi: 36 × 13 adet</li>
+            <li>Koli içi: 6 × 50 adet</li>
+            <li>14 × 36 düzeni • Toplam 504 adet</li>
+          </ul>
+          <p class="mt-4 text-xs text-neutral-500">Macaron görseli kataloğa eklenmelidir.</p>
+        </div>
+        <div class="rounded-2xl bg-white/90 p-6 shadow-md ring-1 ring-[var(--silver)]">
+          <h3 class="text-lg font-semibold text-[var(--magenta-dark)]">Diğer Ürünler</h3>
+          <ul class="mt-4 space-y-3 text-sm text-neutral-700">
+            <li>Kedi dili • 200 gr × 30 adet</li>
+            <li>Mini sarma kornet • 7 cm • 1000 adet</li>
+            <li>Profiterol topu (dökme) • 260-290 adet • 1250 gr</li>
+            <li>Grissini çeşitleri • 200 gr × 30 adet</li>
+          </ul>
+        </div>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2">
+        <div class="image-slot">
+          <span>Macaron Fotoğrafı</span>
+        </div>
+        <div class="image-slot">
+          <span>Atıştırmalık Çeşitleri Fotoğrafı</span>
+        </div>
+      </div>
+      <div class="mt-auto flex items-center justify-between text-xs text-neutral-500">
+        <span>Ürün kataloğu</span>
+        <span>Sayfa 5</span>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
