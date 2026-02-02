@@ -628,14 +628,10 @@
         text-transform: uppercase;
       }
 
-      .print-only {
+      .print-hero-img {
         display: none;
-      }
-
-      .hero-print-image {
         width: 100%;
         height: auto;
-        display: block;
       }
 
       @media (max-width: 768px) {
@@ -722,44 +718,62 @@
           margin: 20mm;
         }
 
+        *,
+        *::before,
+        *::after {
+          animation: none !important;
+          transition: none !important;
+          transform: none !important;
+          filter: none !important;
+        }
+
+        html,
         body {
-          background: white;
+          margin: 0 !important;
+          padding: 0 !important;
+          visibility: visible !important;
+        }
+
+        body * {
+          visibility: visible !important;
+        }
+
+        body {
+          background: white !important;
         }
 
         .page,
         .a4-container,
         .page-elite-shell,
         .intro-page,
-        .intro-container {
+        .intro-container,
+        section,
+        .hero-image,
+        .container {
           box-shadow: none !important;
           height: auto !important;
           min-height: auto !important;
           overflow: visible !important;
         }
 
-        .hero-image .bg-cover {
-          -webkit-print-color-adjust: exact;
-          print-color-adjust: exact;
-        }
-
-        .print-only {
+        .print-hero-img {
           display: block !important;
-        }
-        body,
-        html {
-          margin: 0 !important;
-          padding: 0 !important;
-          visibility: visible !important;
-        }
-
-        * {
-          display: block !important;
-          visibility: visible !important;
-          position: static !important;
+          width: 100% !important;
           height: auto !important;
-          min-height: auto !important;
-          overflow: visible !important;
-          transform: none !important;
+          max-width: 100% !important;
+          page-break-inside: avoid !important;
+        }
+
+        .hero-image,
+        .hero-image .bg-cover {
+          background: none !important;
+        }
+
+        canvas,
+        video,
+        iframe,
+        svg {
+          display: none !important;
         }
       }
     </style>
@@ -788,9 +802,9 @@
                 style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDP3IdTzltvFM0EBF0RDhFUhqt--khM_iuNKYFmx9NdNjYKFGZAhqVf4Fm75qP69NarrEnWBjzUm7A5JNFhfHi3B9cYlBVhO9hrue5wqy7r5-yFfkTc0pBwXPP4HE5__-VW02oJEOtMifcYGcVcNTrxsfSVLWY1RJSLSn-YMSW456uRoh7He9yJWQbM6-n__YEWGSXP7nEk2y0tod_ZkuhgALLsnV3UwKJfpt6P0rstRkMky9Sb6YekQTKq7yMI_2rTX9auzUpiguQ1");'
               >
                 <img
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP3IdTzltvFM0EBF0RDhFUhqt--khM_iuNKYFmx9NdNjYKFGZAhqVf4Fm75qP69NarrEnWBjzUm7A5JNFhfHi3B9cYlBVhO9hrue5wqy7r5-yFfkTc0pBwXPP4HE5__-VW02oJEOtMifcYGcVcNTrxsfSVLWY1RJSLSn-YMSW456uRoh7He9yJWQbM6-n__YEWGSXP7nEk2y0tod_ZkuhgALLsnV3UwKJfpt6P0rstRkMky9Sb6YekQTKq7yMI_2rTX9auzUpiguQ1"
-                  alt="Ay Tart Bakery görseli"
-                  class="print-only hero-print-image"
+                  src="macaron.jpeg"
+                  alt="Macaron hero görseli"
+                  class="print-hero-img"
                 />
               </div>
               </div>
