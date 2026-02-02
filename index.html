@@ -518,9 +518,9 @@
           rgba(255, 255, 255, 0.9),
           rgba(247, 236, 226, 0.75)
         );
-        padding: 10mm;
+        padding: 8mm;
         display: grid;
-        gap: 4mm;
+        gap: 2mm;
         font-size: 12.5pt;
         color: var(--deep-brown);
         box-shadow: 0 6px 18px rgba(101, 70, 48, 0.08);
@@ -529,7 +529,7 @@
       .contact-item {
         display: grid;
         grid-template-columns: 24mm 1fr;
-        gap: 6mm;
+        gap: 3mm;
         align-items: baseline;
       }
 
@@ -628,20 +628,14 @@
         text-transform: uppercase;
       }
 
-      @media print {
-        body {
-          background: var(--cream);
-          padding: 0;
-        }
+      .print-only {
+        display: none;
+      }
 
-        .page {
-          box-shadow: none;
-        }
-
-        @page {
-          size: A4;
-          margin: 20mm;
-        }
+      .hero-print-image {
+        width: 100%;
+        height: auto;
+        display: block;
       }
 
       @media (max-width: 768px) {
@@ -723,21 +717,49 @@
     }
 
       @media print {
+        @page {
+          size: A4;
+          margin: 20mm;
+        }
+
         body {
           background: white;
-          padding: 0;
-          margin: 0;
         }
-        .shadow-2xl,
-        .no-print {
-          display: none !important;
-        }
-        .a4-container {
-          margin: 0 !important;
-          width: 100vw !important;
-          height: 100vh !important;
-          max-height: none !important;
+
+        .page,
+        .a4-container,
+        .page-elite-shell,
+        .intro-page,
+        .intro-container {
           box-shadow: none !important;
+          height: auto !important;
+          min-height: auto !important;
+          overflow: visible !important;
+        }
+
+        .hero-image .bg-cover {
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+
+        .print-only {
+          display: block !important;
+        }
+        body,
+        html {
+          margin: 0 !important;
+          padding: 0 !important;
+          visibility: visible !important;
+        }
+
+        * {
+          display: block !important;
+          visibility: visible !important;
+          position: static !important;
+          height: auto !important;
+          min-height: auto !important;
+          overflow: visible !important;
+          transform: none !important;
         }
       }
     </style>
@@ -761,10 +783,16 @@
               <div
                 class="relative w-full h-full overflow-hidden shadow-xl border-[8px] border-white"
               >
-                <div
-                  class="w-full h-full bg-cover bg-center transition-transform duration-700 hover:scale-105"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDP3IdTzltvFM0EBF0RDhFUhqt--khM_iuNKYFmx9NdNjYKFGZAhqVf4Fm75qP69NarrEnWBjzUm7A5JNFhfHi3B9cYlBVhO9hrue5wqy7r5-yFfkTc0pBwXPP4HE5__-VW02oJEOtMifcYGcVcNTrxsfSVLWY1RJSLSn-YMSW456uRoh7He9yJWQbM6-n__YEWGSXP7nEk2y0tod_ZkuhgALLsnV3UwKJfpt6P0rstRkMky9Sb6YekQTKq7yMI_2rTX9auzUpiguQ1");'
-                ></div>
+              <div
+                class="w-full h-full bg-cover bg-center transition-transform duration-700 hover:scale-105"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDP3IdTzltvFM0EBF0RDhFUhqt--khM_iuNKYFmx9NdNjYKFGZAhqVf4Fm75qP69NarrEnWBjzUm7A5JNFhfHi3B9cYlBVhO9hrue5wqy7r5-yFfkTc0pBwXPP4HE5__-VW02oJEOtMifcYGcVcNTrxsfSVLWY1RJSLSn-YMSW456uRoh7He9yJWQbM6-n__YEWGSXP7nEk2y0tod_ZkuhgALLsnV3UwKJfpt6P0rstRkMky9Sb6YekQTKq7yMI_2rTX9auzUpiguQ1");'
+              >
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP3IdTzltvFM0EBF0RDhFUhqt--khM_iuNKYFmx9NdNjYKFGZAhqVf4Fm75qP69NarrEnWBjzUm7A5JNFhfHi3B9cYlBVhO9hrue5wqy7r5-yFfkTc0pBwXPP4HE5__-VW02oJEOtMifcYGcVcNTrxsfSVLWY1RJSLSn-YMSW456uRoh7He9yJWQbM6-n__YEWGSXP7nEk2y0tod_ZkuhgALLsnV3UwKJfpt6P0rstRkMky9Sb6YekQTKq7yMI_2rTX9auzUpiguQ1"
+                  alt="Ay Tart Bakery görseli"
+                  class="print-only hero-print-image"
+                />
+              </div>
               </div>
               <div
                 class="absolute -bottom-6 -right-6 w-24 h-24 border-r border-b border-primary/30"
