@@ -257,7 +257,7 @@
 
       .product-image img,
       .other-image img,
-      .sable-image img {
+      .sable-thumb {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -351,7 +351,12 @@
       .page-other {
         display: grid;
         grid-template-rows: auto 1fr;
-        gap: 10mm;
+        gap: 7mm;
+        overflow: visible;
+      }
+
+      .content.page-other {
+        overflow: visible;
       }
 
       .page-other-title {
@@ -392,6 +397,17 @@
         border-bottom: 1px solid rgba(63, 52, 45, 0.15);
       }
 
+      .sable-table th.sable-col-image,
+      .sable-table td.sable-col-image {
+        width: 32mm;
+        padding: 3mm 4mm;
+        text-align: center;
+      }
+
+      .sable-table td.sable-col-image {
+        vertical-align: middle;
+      }
+
       .sable-table th {
         font-size: 12pt;
         letter-spacing: 0.2mm;
@@ -404,34 +420,15 @@
         border-bottom: none;
       }
 
-      .sable-gallery {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 6mm;
-        margin-top: 8mm;
-      }
-
-      .sable-card {
-        border-radius: 4mm;
-        padding: 4mm;
-        background: rgba(255, 255, 255, 0.78);
-        box-shadow: 0 4px 12px rgba(101, 70, 48, 0.08);
-        display: grid;
-        gap: 3mm;
-        text-align: center;
-      }
-
-      .sable-image {
-        border-radius: 3mm;
-        overflow: hidden;
-        aspect-ratio: 4 / 3;
+      .sable-thumb {
+        width: 26mm;
+        height: 26mm;
+        object-fit: cover;
+        border-radius: 5mm;
+        border: 1px solid rgba(210, 164, 108, 0.45);
+        box-shadow: 0 3px 10px rgba(101, 70, 48, 0.15);
         background: linear-gradient(135deg, #f1ddca, #ddb696 60%, #f5e6d7);
-      }
-
-      .sable-label {
-        font-size: 9.5pt;
-        color: var(--soft-brown);
-        letter-spacing: 0.1mm;
+        margin: 0 auto;
       }
 
       .page-contact {
@@ -478,11 +475,11 @@
       .other-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: 1fr;
+        grid-auto-rows: auto;
         width: 100%;
         box-sizing: border-box;
-        column-gap: 10mm;
-        row-gap: 10mm;
+        column-gap: 7mm;
+        row-gap: 7mm;
       }
 
       .other-card {
@@ -495,7 +492,7 @@
           rgba(255, 255, 255, 0.9),
           rgba(247, 236, 226, 0.75)
         );
-        padding: 10mm;
+        padding: 7.5mm;
         display: grid;
         grid-template-rows: auto auto;
         gap: 4mm;
@@ -531,7 +528,7 @@
         background: linear-gradient(135deg, #f1ddca, #ddb696 60%, #f5e6d7);
         aspect-ratio: 4 / 3;
         overflow: hidden;
-        max-height: 115mm;
+        max-height: 70mm;
         box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.6);
         display: grid;
         place-items: center;
@@ -751,6 +748,7 @@
         <table class="sable-table">
           <thead>
             <tr>
+              <th class="sable-col-image">Görsel</th>
               <th>Model</th>
               <th>Ölçü</th>
               <th>Adet</th>
@@ -758,63 +756,67 @@
           </thead>
           <tbody>
             <tr>
+              <td class="sable-col-image">
+                <img
+                  class="sable-thumb"
+                  src="dokuzcmsabletabani.jpeg"
+                  alt="Yuvarlak 6 cm sable tabanı"
+                />
+              </td>
               <td>Yuvarlak</td>
               <td>6 cm</td>
               <td>360 adet</td>
             </tr>
             <tr>
+              <td class="sable-col-image">
+                <img
+                  class="sable-thumb"
+                  src="dokuzcmkaresabletabani.jpeg"
+                  alt="Kare 6 cm sable tabanı"
+                />
+              </td>
               <td>Kare</td>
               <td>6 cm</td>
               <td>144 adet</td>
             </tr>
             <tr>
+              <td class="sable-col-image">
+                <img
+                  class="sable-thumb"
+                  src="dokuzcmsabletabani.jpeg"
+                  alt="Yuvarlak 9 cm sable tabanı"
+                />
+              </td>
               <td>Yuvarlak</td>
               <td>9 cm</td>
               <td>144 adet</td>
             </tr>
             <tr>
+              <td class="sable-col-image">
+                <img
+                  class="sable-thumb"
+                  src="dokuzcmkaresabletabani.jpeg"
+                  alt="Kare 9 cm sable tabanı"
+                />
+              </td>
               <td>Kare</td>
               <td>9 cm</td>
               <td>144 adet</td>
             </tr>
             <tr>
+              <td class="sable-col-image">
+                <img
+                  class="sable-thumb"
+                  src="elipssabletabani.jpeg"
+                  alt="Elips 9×3 cm sable tabanı"
+                />
+              </td>
               <td>Elips</td>
               <td>9×3 cm</td>
               <td>288 adet</td>
             </tr>
           </tbody>
         </table>
-        <div class="sable-gallery">
-          <div class="sable-card">
-            <div class="sable-image">
-              <img src="elipssabletabani.jpeg" alt="Elips Sable Tabanı" />
-            </div>
-            <div class="sable-label">Elips Sable Tabanı</div>
-          </div>
-          <div class="sable-card">
-            <div class="sable-image">
-              <img
-                src="dokuzcmkaresabletabani.jpeg"
-                alt="9 cm Kare Sable Tabanı (6 cm kare için de)"
-              />
-            </div>
-            <div class="sable-label">
-              9 cm Kare Sable Tabanı<br />6 cm Kare Sable Tabanı (aynı görsel)
-            </div>
-          </div>
-          <div class="sable-card">
-            <div class="sable-image">
-              <img
-                src="dokuzcmsabletabani.jpeg"
-                alt="9 cm Sable Tabanı (6 cm için de)"
-              />
-            </div>
-            <div class="sable-label">
-              9 cm Yuvarlak Sable Tabanı<br />6 cm Yuvarlak Sable Tabanı (aynı
-              görsel)
-            </div>
-          </div>
-        </div>
       </section>
     </main>
     <main class="page">
