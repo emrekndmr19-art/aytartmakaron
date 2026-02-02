@@ -255,7 +255,9 @@
         text-transform: uppercase;
       }
 
-      .product-image img {
+      .product-image img,
+      .other-image img,
+      .sable-image img {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -283,6 +285,15 @@
         padding: 2mm 4mm;
         font-size: 9pt;
         color: var(--soft-brown);
+        display: inline-flex;
+        align-items: center;
+        gap: 2mm;
+      }
+
+      .info-box img {
+        height: 18px;
+        width: auto;
+        display: block;
       }
 
       .page-elite-shell .page-elite {
@@ -393,6 +404,36 @@
         border-bottom: none;
       }
 
+      .sable-gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6mm;
+        margin-top: 8mm;
+      }
+
+      .sable-card {
+        border-radius: 4mm;
+        padding: 4mm;
+        background: rgba(255, 255, 255, 0.78);
+        box-shadow: 0 4px 12px rgba(101, 70, 48, 0.08);
+        display: grid;
+        gap: 3mm;
+        text-align: center;
+      }
+
+      .sable-image {
+        border-radius: 3mm;
+        overflow: hidden;
+        aspect-ratio: 4 / 3;
+        background: linear-gradient(135deg, #f1ddca, #ddb696 60%, #f5e6d7);
+      }
+
+      .sable-label {
+        font-size: 9.5pt;
+        color: var(--soft-brown);
+        letter-spacing: 0.1mm;
+      }
+
       .page-contact {
         display: grid;
         grid-template-rows: auto 1fr;
@@ -437,7 +478,7 @@
       .other-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
+        grid-auto-rows: 1fr;
         width: 100%;
         box-sizing: border-box;
         column-gap: 10mm;
@@ -499,13 +540,6 @@
         font-size: 11pt;
         letter-spacing: 0.3mm;
         text-transform: uppercase;
-      }
-
-      .other-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
       }
 
       @media print {
@@ -600,7 +634,10 @@
     <main class="page page-elite-shell">
       <section class="content page-two page-elite">
         <h2 class="elite-title">Elite Tartölet Modelleri – El Yapımı</h2>
-        <div class="info-box">18 cm Yuvarlak Tartölet – Koli içi: 36 adet</div>
+        <div class="info-box">
+          <img src="onsekizcmtarttabani.jpeg" alt="18 cm Tart Tabanı" />
+          18 cm Tart Tabanı – Koli içi: 36 adet
+        </div>
         <div class="card-grid">
           <article class="product-card">
             <div class="product-image">
@@ -609,7 +646,7 @@
                 alt="Elite 9 cm Tartölet"
               />
             </div>
-            <h3 class="product-title">Elite Tartölet 1</h3>
+            <h3 class="product-title">Elite 9 cm Tartölet</h3>
           </article>
           <article class="product-card">
             <div class="product-image">
@@ -618,15 +655,15 @@
                 alt="Elite Tartölet Elips"
               />
             </div>
-            <h3 class="product-title">Elite Tartölet 2</h3>
+            <h3 class="product-title">Elite Tartölet Elips</h3>
           </article>
           <article class="product-card">
             <div class="product-image">ELITE TARTÖLET 3 FOTOĞRAFI</div>
-            <h3 class="product-title">Elite Tartölet 3</h3>
+            <h3 class="product-title">Elite Tartölet</h3>
           </article>
           <article class="product-card">
             <div class="product-image">ELITE TARTÖLET 4 FOTOĞRAFI</div>
-            <h3 class="product-title">Elite Tartölet 4</h3>
+            <h3 class="product-title">Elite Tartölet</h3>
           </article>
         </div>
       </section>
@@ -637,19 +674,19 @@
         <div class="card-grid">
           <article class="product-card">
             <div class="product-image">ELITE TARTÖLET 5 FOTOĞRAFI</div>
-            <h3 class="product-title">Elite Tartölet 5</h3>
+            <h3 class="product-title">Elite Tartölet</h3>
           </article>
           <article class="product-card">
             <div class="product-image">ELITE TARTÖLET 6 FOTOĞRAFI</div>
-            <h3 class="product-title">Elite Tartölet 6</h3>
+            <h3 class="product-title">Elite Tartölet</h3>
           </article>
           <article class="product-card">
             <div class="product-image">ELITE TARTÖLET 7 FOTOĞRAFI</div>
-            <h3 class="product-title">Elite Tartölet 7</h3>
+            <h3 class="product-title">Elite Tartölet</h3>
           </article>
           <article class="product-card">
             <div class="product-image">ELITE TARTÖLET 8 FOTOĞRAFI</div>
-            <h3 class="product-title">Elite Tartölet 8</h3>
+            <h3 class="product-title">Elite Tartölet</h3>
           </article>
         </div>
       </section>
@@ -670,7 +707,7 @@
           </article>
           <article class="other-card">
             <div class="other-image">
-              <img src="yedicmkornet.jpeg" alt="Mini Sarma Kornet" />
+              <img src="yedicmkornet.jpeg" alt="7 cm Kornet" />
             </div>
             <div class="other-text">
               <h3 class="other-title">Mini Sarma Kornet</h3>
@@ -688,12 +725,21 @@
           </article>
           <article class="other-card">
             <div class="other-image">
-              <img src="profiteroltopu.jpeg" alt="Profiterol Topu (Dökme)" />
+              <img src="profiteroltopu.jpeg" alt="Profiterol Topu" />
             </div>
             <div class="other-text">
               <h3 class="other-title">Profiterol Topu (Dökme)</h3>
               <p class="other-meta">260–290 adet</p>
               <p class="other-meta">1250 gr</p>
+            </div>
+          </article>
+          <article class="other-card">
+            <div class="other-image">
+              <img src="grissini.jpeg" alt="Grissini" />
+            </div>
+            <div class="other-text">
+              <h3 class="other-title">Grissini Çeşitleri</h3>
+              <p class="other-meta">200 gr × 30</p>
             </div>
           </article>
         </div>
@@ -738,6 +784,34 @@
             </tr>
           </tbody>
         </table>
+        <div class="sable-gallery">
+          <div class="sable-card">
+            <div class="sable-image">
+              <img src="elipssabletabani.jpeg" alt="Elips Sable Tabanı" />
+            </div>
+            <div class="sable-label">Elips Sable Tabanı</div>
+          </div>
+          <div class="sable-card">
+            <div class="sable-image">
+              <img
+                src="dokuzcmkaresabletabani.jpeg"
+                alt="9 cm Kare Sable Tabanı (6 cm kare için de)"
+              />
+            </div>
+            <div class="sable-label">
+              9 cm Kare Sable Tabanı (6 cm kare için de)
+            </div>
+          </div>
+          <div class="sable-card">
+            <div class="sable-image">
+              <img
+                src="dokuzcmsabletabani.jpeg"
+                alt="9 cm Sable Tabanı (6 cm için de)"
+              />
+            </div>
+            <div class="sable-label">9 cm Sable Tabanı (6 cm için de)</div>
+          </div>
+        </div>
       </section>
     </main>
     <main class="page">
