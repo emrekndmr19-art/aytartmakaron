@@ -9,10 +9,14 @@
         --page-width: 210mm;
         --page-height: 297mm;
         --page-margin: 20mm;
-        --cream: #f6f1ea;
-        --deep-brown: #3f342d;
-        --soft-brown: #574c45;
-        --accent: #d9c7b6;
+        --cream: #f7f1e9;
+        --cream-light: #fbf6ef;
+        --vanilla: #f2e6d8;
+        --deep-brown: #4b352b;
+        --soft-brown: #6a4a3f;
+        --berry: #7b2e3a;
+        --caramel: #d2a46c;
+        --accent: #e7d3c2;
       }
 
       * {
@@ -27,9 +31,9 @@
       }
 
       body {
-        background: #e9e1d8;
-        font-family: "Cormorant Garamond", "Didot", "Bodoni MT", "Times New Roman",
-          serif;
+        background: radial-gradient(circle at top, #f9f2ea, #efe3d7 45%, #e6d6c8);
+        font-family: "Cormorant Garamond", "Playfair Display", "Didot",
+          "Times New Roman", serif;
         color: var(--deep-brown);
         display: flex;
         flex-direction: column;
@@ -42,11 +46,11 @@
       .page {
         width: var(--page-width);
         height: var(--page-height);
-        background: var(--cream);
+        background: linear-gradient(160deg, var(--cream-light), var(--cream));
         position: relative;
         overflow: hidden;
         margin: 0 auto;
-        box-shadow: 0 18px 45px rgba(63, 52, 45, 0.2);
+        box-shadow: 0 18px 40px rgba(82, 56, 43, 0.18);
         break-after: page;
       }
 
@@ -62,16 +66,21 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 2px solid rgba(63, 52, 45, 0.18);
+        border: 1px solid rgba(123, 46, 58, 0.2);
         border-radius: 8mm;
-        background: rgba(255, 255, 255, 0.5);
+        background: linear-gradient(
+          140deg,
+          rgba(255, 255, 255, 0.85),
+          rgba(247, 238, 228, 0.7)
+        );
+        box-shadow: inset 0 0 0 1px rgba(210, 164, 108, 0.15);
         min-height: 80mm;
       }
 
       .logo-placeholder {
         width: 90mm;
         height: 40mm;
-        border: 1.5px dashed rgba(63, 52, 45, 0.3);
+        border: 1.5px dashed rgba(106, 74, 63, 0.35);
         border-radius: 6mm;
         display: flex;
         align-items: center;
@@ -87,7 +96,7 @@
         font-size: 20pt;
         letter-spacing: 0.6mm;
         text-transform: uppercase;
-        color: var(--soft-brown);
+        color: var(--berry);
       }
 
       .hero {
@@ -95,10 +104,10 @@
         border-radius: 10mm;
         background: linear-gradient(
             135deg,
-            rgba(87, 76, 69, 0.08),
-            rgba(255, 255, 255, 0.1)
+            rgba(123, 46, 58, 0.08),
+            rgba(255, 255, 255, 0.18)
           ),
-          linear-gradient(135deg, #e6d6c6, #f1e6db 65%, #d7c0ad);
+          linear-gradient(135deg, #f2e3d4, #f8efe6 65%, #e4cdb8);
         overflow: hidden;
         min-height: 110mm;
       }
@@ -110,8 +119,8 @@
         border-radius: 50%;
         background: radial-gradient(
           circle at 35% 35%,
-          #f7ede4,
-          #d9c0aa 70%
+          #fdf4ea,
+          #e5c7ae 70%
         );
         opacity: 0.9;
       }
@@ -137,10 +146,10 @@
         border-radius: 50%;
         background: radial-gradient(
           circle at 35% 35%,
-          #f5e4d2,
-          #caa58a 70%
+          #f7e7d6,
+          #cfa27f 70%
         );
-        box-shadow: inset 0 0 0 6mm #ead7c5;
+        box-shadow: inset 0 0 0 6mm rgba(236, 210, 185, 0.95);
       }
 
       .tart.tart-left {
@@ -159,10 +168,10 @@
         width: 38mm;
         height: 22mm;
         border-radius: 12mm;
-        background: linear-gradient(180deg, #e7c8b2, #caa088);
+        background: linear-gradient(180deg, #e7b6b4, #b06a6f);
         bottom: 18mm;
         right: 18mm;
-        box-shadow: 0 8px 20px rgba(63, 52, 45, 0.18);
+        box-shadow: 0 10px 24px rgba(100, 55, 52, 0.22);
       }
 
       .macaron::before {
@@ -170,7 +179,7 @@
         position: absolute;
         inset: 4mm 2mm;
         border-radius: 10mm;
-        background: linear-gradient(180deg, #f1dac7, #d5b299);
+        background: linear-gradient(180deg, #f2d0cf, #d3a0a3);
       }
 
       .page-two {
@@ -183,7 +192,7 @@
         font-size: 22pt;
         letter-spacing: 0.5mm;
         text-transform: uppercase;
-        color: var(--soft-brown);
+        color: var(--berry);
       }
 
       .card-grid {
@@ -195,29 +204,44 @@
 
       .product-card {
         border-radius: 8mm;
-        border: 1.5px solid rgba(63, 52, 45, 0.15);
-        background: rgba(255, 255, 255, 0.6);
+        border: 1px solid rgba(123, 46, 58, 0.18);
+        background: linear-gradient(
+          160deg,
+          rgba(255, 255, 255, 0.92),
+          rgba(249, 240, 232, 0.75)
+        );
         padding: 8mm;
         display: grid;
         grid-template-rows: auto auto 1fr;
         gap: 4mm;
         break-inside: avoid;
+        box-shadow: 0 6px 18px rgba(101, 70, 48, 0.08);
       }
 
       .product-title {
         font-size: 16pt;
         color: var(--deep-brown);
+        letter-spacing: 0.2mm;
       }
 
       .product-pack {
         font-size: 12pt;
         color: var(--soft-brown);
+        letter-spacing: 0.1mm;
       }
 
       .product-image {
         border-radius: 6mm;
-        background: linear-gradient(135deg, #efe3d6, #d8c0ad);
-        border: 1px dashed rgba(63, 52, 45, 0.25);
+        background: linear-gradient(135deg, #f2dfcc, #e1c0a4 60%, #f4e6d7);
+        border: 1px solid rgba(210, 164, 108, 0.35);
+        box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.6);
+        display: grid;
+        place-items: center;
+        text-align: center;
+        color: rgba(75, 53, 43, 0.7);
+        font-size: 11pt;
+        letter-spacing: 0.3mm;
+        text-transform: uppercase;
       }
 
       .page-elite {
@@ -228,14 +252,14 @@
         font-size: 20pt;
         letter-spacing: 0.4mm;
         text-transform: uppercase;
-        color: var(--soft-brown);
+        color: var(--berry);
       }
 
       .info-box {
         align-self: start;
         justify-self: start;
-        background: rgba(255, 255, 255, 0.7);
-        border: 1px solid rgba(63, 52, 45, 0.2);
+        background: rgba(255, 252, 248, 0.8);
+        border: 1px solid rgba(123, 46, 58, 0.2);
         border-radius: 3mm;
         padding: 2mm 4mm;
         font-size: 9pt;
@@ -257,14 +281,19 @@
         border-radius: 4mm;
         padding: 5mm;
         grid-template-rows: 3fr auto;
-        background: rgba(255, 255, 255, 0.75);
+        background: linear-gradient(
+          150deg,
+          rgba(255, 255, 255, 0.95),
+          rgba(247, 236, 226, 0.8)
+        );
       }
 
       .page-elite-shell .product-image {
         border-radius: 3mm;
         border: none;
-        background: linear-gradient(135deg, #e8d7c7, #d4bca8 60%, #eedece);
+        background: linear-gradient(135deg, #f0dcc8, #ddb494 60%, #f4e3d5);
         min-height: 55mm;
+        box-shadow: inset 0 0 16px rgba(255, 255, 255, 0.55);
       }
 
       .page-elite-shell .product-title {
@@ -273,7 +302,7 @@
       }
 
       .page-elite-shell {
-        background: #f2e7dc;
+        background: linear-gradient(160deg, #f7efe6, #efe0d1);
         width: var(--page-width);
         max-width: var(--page-width);
         height: var(--page-height);
@@ -299,7 +328,7 @@
         font-size: 20pt;
         letter-spacing: 0.4mm;
         text-transform: uppercase;
-        color: var(--soft-brown);
+        color: var(--berry);
       }
 
       .page-sable {
@@ -312,7 +341,7 @@
         font-size: 20pt;
         letter-spacing: 0.4mm;
         text-transform: uppercase;
-        color: var(--soft-brown);
+        color: var(--berry);
       }
 
       .sable-table {
@@ -320,9 +349,10 @@
         border-collapse: collapse;
         font-size: 12.5pt;
         color: var(--deep-brown);
-        background: rgba(255, 255, 255, 0.6);
+        background: rgba(255, 255, 255, 0.78);
         border-radius: 4mm;
         overflow: hidden;
+        box-shadow: 0 6px 18px rgba(101, 70, 48, 0.08);
       }
 
       .sable-table th,
@@ -336,8 +366,8 @@
         font-size: 12pt;
         letter-spacing: 0.2mm;
         text-transform: uppercase;
-        color: var(--soft-brown);
-        background: rgba(217, 199, 182, 0.35);
+        color: var(--berry);
+        background: rgba(210, 164, 108, 0.28);
       }
 
       .sable-table tr:last-child td {
@@ -354,17 +384,22 @@
         font-size: 20pt;
         letter-spacing: 0.4mm;
         text-transform: uppercase;
-        color: var(--soft-brown);
+        color: var(--berry);
       }
 
       .contact-card {
         border-radius: 6mm;
-        background: rgba(255, 255, 255, 0.65);
+        background: linear-gradient(
+          150deg,
+          rgba(255, 255, 255, 0.9),
+          rgba(247, 236, 226, 0.75)
+        );
         padding: 10mm;
         display: grid;
         gap: 4mm;
         font-size: 12.5pt;
         color: var(--deep-brown);
+        box-shadow: 0 6px 18px rgba(101, 70, 48, 0.08);
       }
 
       .contact-item {
@@ -376,7 +411,7 @@
 
       .contact-label {
         font-weight: 600;
-        color: var(--soft-brown);
+        color: var(--berry);
         letter-spacing: 0.1mm;
       }
 
@@ -395,24 +430,31 @@
         overflow: hidden;
         box-sizing: border-box;
         border-radius: 6mm;
-        background: rgba(255, 255, 255, 0.65);
+        background: linear-gradient(
+          150deg,
+          rgba(255, 255, 255, 0.9),
+          rgba(247, 236, 226, 0.75)
+        );
         padding: 10mm;
         display: grid;
         grid-template-rows: auto auto;
         gap: 4mm;
         break-inside: avoid;
+        box-shadow: 0 6px 18px rgba(101, 70, 48, 0.08);
       }
 
       .other-title {
         font-size: 14pt;
         font-weight: 700;
         color: var(--deep-brown);
+        letter-spacing: 0.2mm;
       }
 
       .other-meta {
         font-size: 11pt;
         color: var(--soft-brown);
         line-height: 1.2;
+        letter-spacing: 0.1mm;
       }
 
       .other-text {
@@ -426,10 +468,18 @@
       .other-image {
         width: 100%;
         border-radius: 14px;
-        background: linear-gradient(135deg, #efe3d6, #d8c0ad);
+        background: linear-gradient(135deg, #f1ddca, #ddb696 60%, #f5e6d7);
         aspect-ratio: 4 / 3;
         overflow: hidden;
         max-height: 115mm;
+        box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.6);
+        display: grid;
+        place-items: center;
+        text-align: center;
+        color: rgba(75, 53, 43, 0.7);
+        font-size: 11pt;
+        letter-spacing: 0.3mm;
+        text-transform: uppercase;
       }
 
       .other-image img {
@@ -460,7 +510,7 @@
     <main class="page">
       <section class="content">
         <div class="logo-area">
-          <div class="logo-placeholder">Logo</div>
+          <div class="logo-placeholder">LOGO</div>
         </div>
         <h1 class="title">Ürün Kataloğu</h1>
         <div class="hero">
@@ -477,22 +527,22 @@
           <article class="product-card">
             <h3 class="product-title">4 cm Yuvarlak Tartölet</h3>
             <p class="product-pack">Koli içi: 324 adet</p>
-            <div class="product-image"></div>
+            <div class="product-image">4 CM YUVARLAK TARTÖLET FOTOĞRAFI</div>
           </article>
           <article class="product-card">
             <h3 class="product-title">4 cm Kare Tartölet</h3>
             <p class="product-pack">Koli içi: 324 adet</p>
-            <div class="product-image"></div>
+            <div class="product-image">4 CM KARE TARTÖLET FOTOĞRAFI</div>
           </article>
           <article class="product-card">
             <h3 class="product-title">6 cm Yuvarlak Tartölet</h3>
             <p class="product-pack">Koli içi: 180 adet</p>
-            <div class="product-image"></div>
+            <div class="product-image">6 CM YUVARLAK TARTÖLET FOTOĞRAFI</div>
           </article>
           <article class="product-card">
             <h3 class="product-title">9×3 cm Oval Tartölet</h3>
             <p class="product-pack">Koli içi: -</p>
-            <div class="product-image"></div>
+            <div class="product-image">9×3 CM OVAL TARTÖLET FOTOĞRAFI</div>
           </article>
         </div>
       </section>
@@ -504,22 +554,22 @@
           <article class="product-card">
             <h3 class="product-title">5 cm Küçük Tartölet</h3>
             <p class="product-pack">Koli içi: 252 adet</p>
-            <div class="product-image"></div>
+            <div class="product-image">5 CM KÜÇÜK TARTÖLET FOTOĞRAFI</div>
           </article>
           <article class="product-card">
             <h3 class="product-title">9 cm Büyük Tartölet</h3>
             <p class="product-pack">Koli içi: 135 adet</p>
-            <div class="product-image"></div>
+            <div class="product-image">9 CM BÜYÜK TARTÖLET FOTOĞRAFI</div>
           </article>
           <article class="product-card">
             <h3 class="product-title">9 cm Yuvarlak Tartölet</h3>
             <p class="product-pack">Koli içi: 72 adet</p>
-            <div class="product-image"></div>
+            <div class="product-image">9 CM YUVARLAK TARTÖLET FOTOĞRAFI</div>
           </article>
           <article class="product-card">
             <h3 class="product-title">9 cm Büyük Kare Tartölet</h3>
             <p class="product-pack">Koli içi: 81 adet</p>
-            <div class="product-image"></div>
+            <div class="product-image">9 CM BÜYÜK KARE TARTÖLET FOTOĞRAFI</div>
           </article>
         </div>
       </section>
@@ -530,19 +580,19 @@
         <div class="info-box">18 cm Yuvarlak Tartölet – Koli içi: 36 adet</div>
         <div class="card-grid">
           <article class="product-card">
-            <div class="product-image"></div>
+            <div class="product-image">ELITE TARTÖLET 1 FOTOĞRAFI</div>
             <h3 class="product-title">Elite Tartölet 1</h3>
           </article>
           <article class="product-card">
-            <div class="product-image"></div>
+            <div class="product-image">ELITE TARTÖLET 2 FOTOĞRAFI</div>
             <h3 class="product-title">Elite Tartölet 2</h3>
           </article>
           <article class="product-card">
-            <div class="product-image"></div>
+            <div class="product-image">ELITE TARTÖLET 3 FOTOĞRAFI</div>
             <h3 class="product-title">Elite Tartölet 3</h3>
           </article>
           <article class="product-card">
-            <div class="product-image"></div>
+            <div class="product-image">ELITE TARTÖLET 4 FOTOĞRAFI</div>
             <h3 class="product-title">Elite Tartölet 4</h3>
           </article>
         </div>
@@ -553,19 +603,19 @@
         <h2 class="elite-title">Elite Tartölet Modelleri – El Yapımı</h2>
         <div class="card-grid">
           <article class="product-card">
-            <div class="product-image"></div>
+            <div class="product-image">ELITE TARTÖLET 5 FOTOĞRAFI</div>
             <h3 class="product-title">Elite Tartölet 5</h3>
           </article>
           <article class="product-card">
-            <div class="product-image"></div>
+            <div class="product-image">ELITE TARTÖLET 6 FOTOĞRAFI</div>
             <h3 class="product-title">Elite Tartölet 6</h3>
           </article>
           <article class="product-card">
-            <div class="product-image"></div>
+            <div class="product-image">ELITE TARTÖLET 7 FOTOĞRAFI</div>
             <h3 class="product-title">Elite Tartölet 7</h3>
           </article>
           <article class="product-card">
-            <div class="product-image"></div>
+            <div class="product-image">ELITE TARTÖLET 8 FOTOĞRAFI</div>
             <h3 class="product-title">Elite Tartölet 8</h3>
           </article>
         </div>
@@ -576,7 +626,7 @@
         <h2 class="page-other-title">Diğer Ürünler</h2>
         <div class="other-grid">
           <article class="other-card">
-            <div class="other-image"></div>
+            <div class="other-image">MACARON FOTOĞRAFI</div>
             <div class="other-text">
               <h3 class="other-title">Macaron</h3>
               <p class="other-meta">Koli içi: 14×36</p>
@@ -584,21 +634,21 @@
             </div>
           </article>
           <article class="other-card">
-            <div class="other-image"></div>
+            <div class="other-image">MINI SARMA KORNET FOTOĞRAFI</div>
             <div class="other-text">
               <h3 class="other-title">Mini Sarma Kornet</h3>
               <p class="other-meta">7 cm – 1000 adet</p>
             </div>
           </article>
           <article class="other-card">
-            <div class="other-image"></div>
+            <div class="other-image">KEDI DILI FOTOĞRAFI</div>
             <div class="other-text">
               <h3 class="other-title">Kedi Dili</h3>
               <p class="other-meta">200 gr × 30</p>
             </div>
           </article>
           <article class="other-card">
-            <div class="other-image"></div>
+            <div class="other-image">PROFITEROL TOPU FOTOĞRAFI</div>
             <div class="other-text">
               <h3 class="other-title">Profiterol Topu (Dökme)</h3>
               <p class="other-meta">260–290 adet</p>
