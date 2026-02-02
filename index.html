@@ -344,6 +344,42 @@
         border-bottom: none;
       }
 
+      .page-contact {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        gap: 10mm;
+      }
+
+      .page-contact-title {
+        font-size: 20pt;
+        letter-spacing: 0.4mm;
+        text-transform: uppercase;
+        color: var(--soft-brown);
+      }
+
+      .contact-card {
+        border-radius: 6mm;
+        background: rgba(255, 255, 255, 0.65);
+        padding: 10mm;
+        display: grid;
+        gap: 4mm;
+        font-size: 12.5pt;
+        color: var(--deep-brown);
+      }
+
+      .contact-item {
+        display: grid;
+        grid-template-columns: 24mm 1fr;
+        gap: 6mm;
+        align-items: baseline;
+      }
+
+      .contact-label {
+        font-weight: 600;
+        color: var(--soft-brown);
+        letter-spacing: 0.1mm;
+      }
+
       .other-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -611,6 +647,29 @@
             </tr>
           </tbody>
         </table>
+      </section>
+    </main>
+    <main class="page">
+      <section class="content page-contact">
+        <h2 class="page-contact-title">İletişim</h2>
+        <div class="contact-card">
+          <div class="contact-item">
+            <span class="contact-label">Adres</span>
+            <span>Gözler Mah. 280 Sk No:11, Kepez / Antalya</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Instagram</span>
+            <span>aytartmacaron</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">E-mail</span>
+            <span>aytartbakery@gmail.com</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">GSM</span>
+            <span>0 532 216 75 62</span>
+          </div>
+        </div>
       </section>
     </main>
   </body>
