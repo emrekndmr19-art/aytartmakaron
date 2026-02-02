@@ -4,6 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ürün Kataloğu Kapak</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        corePlugins: {
+          preflight: false,
+        },
+        theme: {
+          extend: {
+            colors: {
+              primary: "#b8860b",
+              "off-white": "#faf9f6",
+              "text-dark": "#2d2a26",
+            },
+            fontFamily: {
+              serif: ["Cormorant Garamond", "serif"],
+              display: ["Playfair Display", "serif"],
+              sans: ["Montserrat", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .a4-container {
+          aspect-ratio: 1 / 1.414;
+          max-height: calc(100vh - 40px);
+          margin: 20px auto;
+        }
+        .safe-margin {
+          padding: 10% 8%;
+        }
+      }
+    </style>
     <style>
       :root {
         --page-width: 210mm;
@@ -660,14 +703,134 @@
           white-space: nowrap;
         }
 
-        .contact-item {
-          grid-template-columns: 1fr;
-          gap: 6px;
+      .contact-item {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+    }
+
+      @media print {
+        body {
+          background: white;
+          padding: 0;
+          margin: 0;
+        }
+        .shadow-2xl,
+        .no-print {
+          display: none !important;
+        }
+        .a4-container {
+          margin: 0 !important;
+          width: 100vw !important;
+          height: 100vh !important;
+          max-height: none !important;
+          box-shadow: none !important;
         }
       }
     </style>
   </head>
   <body>
+    <section class="bg-stone-200 font-sans text-text-dark antialiased">
+      <div
+        class="a4-container bg-off-white shadow-2xl relative overflow-hidden flex flex-col"
+      >
+        <div
+          class="flex-1 flex flex-col items-center justify-between safe-margin text-center"
+        >
+          <header class="w-full flex flex-col items-center">
+            <div class="mb-6">
+              <div
+                class="w-20 h-20 border border-primary/30 rounded-full flex items-center justify-center p-2 mb-4"
+              >
+                <div
+                  class="w-full h-full border border-primary/20 rounded-full flex items-center justify-center bg-white/50"
+                >
+                  <span
+                    class="material-symbols-outlined text-primary text-4xl font-light italic"
+                    >stars</span
+                  >
+                </div>
+              </div>
+              <h1
+                class="font-display text-3xl tracking-[0.25em] font-light uppercase text-text-dark"
+              >
+                Aytart
+              </h1>
+              <div class="h-px w-12 bg-primary/40 mx-auto my-2"></div>
+              <p
+                class="text-[10px] tracking-[0.4em] font-medium text-primary/80 uppercase"
+              >
+                Makaron
+              </p>
+            </div>
+          </header>
+          <div class="w-full flex-1 flex flex-col justify-center py-12">
+            <div class="relative w-full h-full max-h-[500px]">
+              <div
+                class="absolute -inset-4 border border-primary/10 rounded-sm"
+              ></div>
+              <div
+                class="relative w-full h-full overflow-hidden shadow-xl border-[8px] border-white"
+              >
+                <div
+                  class="w-full h-full bg-cover bg-center transition-transform duration-700 hover:scale-105"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDP3IdTzltvFM0EBF0RDhFUhqt--khM_iuNKYFmx9NdNjYKFGZAhqVf4Fm75qP69NarrEnWBjzUm7A5JNFhfHi3B9cYlBVhO9hrue5wqy7r5-yFfkTc0pBwXPP4HE5__-VW02oJEOtMifcYGcVcNTrxsfSVLWY1RJSLSn-YMSW456uRoh7He9yJWQbM6-n__YEWGSXP7nEk2y0tod_ZkuhgALLsnV3UwKJfpt6P0rstRkMky9Sb6YekQTKq7yMI_2rTX9auzUpiguQ1");'
+                ></div>
+              </div>
+              <div
+                class="absolute -bottom-6 -right-6 w-24 h-24 border-r border-b border-primary/30"
+              ></div>
+              <div
+                class="absolute -top-6 -left-6 w-24 h-24 border-l border-t border-primary/30"
+              ></div>
+            </div>
+          </div>
+          <footer class="w-full flex flex-col items-center">
+            <div class="mb-4">
+              <span
+                class="text-xs tracking-[0.3em] font-sans text-stone-400 uppercase"
+                >Premium Boutique Bakery</span
+              >
+            </div>
+            <h2
+              class="font-serif text-5xl italic font-semibold text-text-dark mb-4"
+            >
+              2024
+              <span class="text-primary tracking-tight not-italic font-bold"
+                >ÜRÜN KATALOĞU</span
+              >
+            </h2>
+            <div
+              class="w-24 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent mb-8"
+            ></div>
+            <div
+              class="flex items-center gap-12 text-[10px] tracking-widest text-stone-500 uppercase font-medium"
+            >
+              <span>Paris</span>
+              <span class="w-1 h-1 bg-primary rounded-full"></span>
+              <span>İstanbul</span>
+              <span class="w-1 h-1 bg-primary rounded-full"></span>
+              <span>Dubai</span>
+            </div>
+          </footer>
+        </div>
+        <div
+          class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -mr-32 -mt-32"
+        ></div>
+        <div
+          class="absolute bottom-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -ml-32 -mb-32"
+        ></div>
+      </div>
+      <div class="fixed bottom-6 right-6 flex gap-4 no-print">
+        <button
+          class="bg-white/90 backdrop-blur text-text-dark px-4 py-2 rounded-full shadow-lg border border-stone-200 text-sm font-medium flex items-center gap-2 hover:bg-white transition-all"
+          onclick="window.print()"
+        >
+          <span class="material-symbols-outlined text-base">print</span>
+          PDF Yazdır
+        </button>
+      </div>
+    </section>
     <main class="page cover-page">
       <section class="content">
         <div class="logo-area">
