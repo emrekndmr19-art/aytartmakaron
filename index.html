@@ -289,6 +289,53 @@
         height: 100%;
       }
 
+      .page-other {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        gap: 10mm;
+      }
+
+      .page-other-title {
+        font-size: 20pt;
+        letter-spacing: 0.4mm;
+        text-transform: uppercase;
+        color: var(--soft-brown);
+      }
+
+      .other-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8mm;
+      }
+
+      .other-card {
+        border-radius: 6mm;
+        border: 1.5px solid rgba(63, 52, 45, 0.15);
+        background: rgba(255, 255, 255, 0.65);
+        padding: 6mm;
+        display: grid;
+        grid-template-rows: auto auto 1fr;
+        gap: 3mm;
+      }
+
+      .other-title {
+        font-size: 14pt;
+        color: var(--deep-brown);
+      }
+
+      .other-meta {
+        font-size: 11pt;
+        color: var(--soft-brown);
+        line-height: 1.4;
+      }
+
+      .other-image {
+        border-radius: 4mm;
+        border: 1px dashed rgba(63, 52, 45, 0.25);
+        background: linear-gradient(135deg, #efe3d6, #d8c0ad);
+        min-height: 28mm;
+      }
+
       @media print {
         body {
           background: var(--cream);
@@ -417,6 +464,40 @@
           <article class="product-card">
             <div class="product-image"></div>
             <h3 class="product-title">Elite Tartölet 8</h3>
+          </article>
+        </div>
+      </section>
+    </main>
+    <main class="page">
+      <section class="content page-other">
+        <h2 class="page-other-title">Diğer Ürünler</h2>
+        <div class="other-grid">
+          <article class="other-card">
+            <h3 class="other-title">Macaron</h3>
+            <p class="other-meta">Koli içi: 14×36 adet</p>
+            <p class="other-meta">Koli içi: 6×50 adet</p>
+            <div class="other-image"></div>
+          </article>
+          <article class="other-card">
+            <h3 class="other-title">Mini Sarma Kornet</h3>
+            <p class="other-meta">7 cm – 1000 adet</p>
+            <div class="other-image"></div>
+          </article>
+          <article class="other-card">
+            <h3 class="other-title">Kedi Dili</h3>
+            <p class="other-meta">200 gr × 30 adet</p>
+            <div class="other-image"></div>
+          </article>
+          <article class="other-card">
+            <h3 class="other-title">Profiterol Topu (Dökme)</h3>
+            <p class="other-meta">260–290 adet</p>
+            <p class="other-meta">1250 gr</p>
+            <div class="other-image"></div>
+          </article>
+          <article class="other-card">
+            <h3 class="other-title">Grissini Çeşitleri</h3>
+            <p class="other-meta">200 gr × 30 adet</p>
+            <div class="other-image"></div>
           </article>
         </div>
       </section>
