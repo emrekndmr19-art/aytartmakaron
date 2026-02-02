@@ -769,6 +769,13 @@
           background: none !important;
         }
 
+        .hero-image .hero-frame,
+        .hero-image .hero-frame .bg-cover {
+          height: auto !important;
+          min-height: auto !important;
+          overflow: visible !important;
+        }
+
         canvas,
         video,
         iframe,
@@ -795,17 +802,18 @@
                 class="absolute -inset-4 border border-primary/10 rounded-sm"
               ></div>
               <div
-                class="relative w-full h-full overflow-hidden shadow-xl border-[8px] border-white"
+                class="hero-frame relative w-full h-full overflow-hidden shadow-xl border-[8px] border-white"
               >
-              <div
-                class="w-full h-full bg-cover bg-center transition-transform duration-700 hover:scale-105"
-                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDP3IdTzltvFM0EBF0RDhFUhqt--khM_iuNKYFmx9NdNjYKFGZAhqVf4Fm75qP69NarrEnWBjzUm7A5JNFhfHi3B9cYlBVhO9hrue5wqy7r5-yFfkTc0pBwXPP4HE5__-VW02oJEOtMifcYGcVcNTrxsfSVLWY1RJSLSn-YMSW456uRoh7He9yJWQbM6-n__YEWGSXP7nEk2y0tod_ZkuhgALLsnV3UwKJfpt6P0rstRkMky9Sb6YekQTKq7yMI_2rTX9auzUpiguQ1");'
-              >
-                <img
-                  src="macaron.jpeg"
-                  alt="Macaron hero görseli"
-                  class="print-hero-img"
-                />
+                <div
+                  class="w-full h-full bg-cover bg-center transition-transform duration-700 hover:scale-105"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDP3IdTzltvFM0EBF0RDhFUhqt--khM_iuNKYFmx9NdNjYKFGZAhqVf4Fm75qP69NarrEnWBjzUm7A5JNFhfHi3B9cYlBVhO9hrue5wqy7r5-yFfkTc0pBwXPP4HE5__-VW02oJEOtMifcYGcVcNTrxsfSVLWY1RJSLSn-YMSW456uRoh7He9yJWQbM6-n__YEWGSXP7nEk2y0tod_ZkuhgALLsnV3UwKJfpt6P0rstRkMky9Sb6YekQTKq7yMI_2rTX9auzUpiguQ1");'
+                >
+                  <img
+                    src="macaron.jpeg"
+                    alt="Macaron hero görseli"
+                    class="print-hero-img"
+                  />
+                </div>
               </div>
               </div>
               <div
