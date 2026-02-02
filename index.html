@@ -492,7 +492,7 @@
         );
         padding: 6mm;
         display: grid;
-        grid-template-rows: auto 1fr;
+        grid-template-rows: auto auto;
         gap: 3mm;
         min-height: 0;
         break-inside: avoid;
@@ -515,18 +515,24 @@
 
       .page-other .other-title {
         font-size: 13pt;
+        display: block;
+        margin: 0;
+        line-height: 1.15;
       }
 
       .page-other .other-meta {
         font-size: 10.5pt;
+        display: block;
+        margin: 0;
+        line-height: 1.15;
       }
 
       .page-other .other-text {
-        display: grid;
-        gap: 1.5mm;
-        padding-top: 1mm;
-        max-height: none;
-        overflow: visible;
+        display: block;
+        overflow: hidden;
+        max-height: 26mm;
+        padding-top: 2mm;
+        position: static;
       }
 
       .page-other .other-image {
