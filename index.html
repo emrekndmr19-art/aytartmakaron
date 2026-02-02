@@ -40,6 +40,7 @@
         position: relative;
         overflow: hidden;
         box-shadow: 0 18px 45px rgba(63, 52, 45, 0.2);
+        break-after: page;
       }
 
       .content {
@@ -165,6 +166,53 @@
         background: linear-gradient(180deg, #f1dac7, #d5b299);
       }
 
+      .page-two {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        gap: 10mm;
+      }
+
+      .page-two-title {
+        font-size: 22pt;
+        letter-spacing: 0.5mm;
+        text-transform: uppercase;
+        color: var(--soft-brown);
+      }
+
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 8mm;
+      }
+
+      .product-card {
+        border-radius: 8mm;
+        border: 1.5px solid rgba(63, 52, 45, 0.15);
+        background: rgba(255, 255, 255, 0.6);
+        padding: 8mm;
+        display: grid;
+        grid-template-rows: auto auto 1fr;
+        gap: 4mm;
+        break-inside: avoid;
+      }
+
+      .product-title {
+        font-size: 16pt;
+        color: var(--deep-brown);
+      }
+
+      .product-pack {
+        font-size: 12pt;
+        color: var(--soft-brown);
+      }
+
+      .product-image {
+        border-radius: 6mm;
+        background: linear-gradient(135deg, #efe3d6, #d8c0ad);
+        border: 1px dashed rgba(63, 52, 45, 0.25);
+      }
+
       @media print {
         body {
           background: var(--cream);
@@ -193,6 +241,33 @@
           <span class="tart tart-left"></span>
           <span class="tart tart-right"></span>
           <span class="macaron"></span>
+        </div>
+      </section>
+    </main>
+    <main class="page">
+      <section class="content page-two">
+        <h2 class="page-two-title">Tartölet Modelleri</h2>
+        <div class="card-grid">
+          <article class="product-card">
+            <h3 class="product-title">4 cm Yuvarlak Tartölet</h3>
+            <p class="product-pack">Koli içi: 324 adet</p>
+            <div class="product-image"></div>
+          </article>
+          <article class="product-card">
+            <h3 class="product-title">4 cm Kare Tartölet</h3>
+            <p class="product-pack">Koli içi: 324 adet</p>
+            <div class="product-image"></div>
+          </article>
+          <article class="product-card">
+            <h3 class="product-title">6 cm Yuvarlak Tartölet</h3>
+            <p class="product-pack">Koli içi: 180 adet</p>
+            <div class="product-image"></div>
+          </article>
+          <article class="product-card">
+            <h3 class="product-title">9×3 cm Oval Tartölet</h3>
+            <p class="product-pack">Koli içi: -</p>
+            <div class="product-image"></div>
+          </article>
         </div>
       </section>
     </main>
