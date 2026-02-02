@@ -571,6 +571,84 @@
           margin: 20mm;
         }
       }
+
+      @media (max-width: 768px) {
+        body {
+          padding: 16px 0;
+          gap: 16px;
+        }
+
+        .page,
+        .page-elite-shell {
+          width: 100%;
+          max-width: 100%;
+          height: auto;
+          min-height: 0;
+        }
+
+        .page-elite-shell {
+          padding: 20px;
+        }
+
+        .content {
+          position: relative;
+          inset: auto;
+          padding: 20px;
+          grid-template-rows: auto;
+          gap: 24px;
+        }
+
+        .page-elite-shell .content {
+          height: auto;
+        }
+
+        .logo-area {
+          min-height: 0;
+          padding: 10%;
+        }
+
+        .logo-img {
+          width: 80%;
+        }
+
+        .card-grid,
+        .page-other .other-grid {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto;
+        }
+
+        .product-card,
+        .page-other .other-card,
+        .contact-card {
+          padding: 16px;
+        }
+
+        .page-other .other-card {
+          gap: 12px;
+        }
+
+        .page-other .other-image {
+          max-height: none;
+        }
+
+        .sable-table {
+          display: block;
+          width: 100%;
+          overflow-x: auto;
+          font-size: 11pt;
+        }
+
+        .sable-table th,
+        .sable-table td {
+          padding: 10px 12px;
+          white-space: nowrap;
+        }
+
+        .contact-item {
+          grid-template-columns: 1fr;
+          gap: 6px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -584,11 +662,6 @@
           />
         </div>
         <h1 class="title">Ürün Kataloğu</h1>
-        <div class="hero">
-          <span class="tart tart-left"></span>
-          <span class="tart tart-right"></span>
-          <span class="macaron"></span>
-        </div>
       </section>
     </main>
     <main class="page">
@@ -641,7 +714,7 @@
             <h3 class="product-title">Büyük Kayık Tartölet</h3>
             <p class="product-pack">Koli içi: 135 adet</p>
             <div class="product-image">
-              <img src="buyukkayiktartolet.png" alt="Büyük Kayık Tartölet" />
+              <img src="buyukkayıkyeni.png" alt="Büyük Kayık Tartölet" />
             </div>
           </article>
           <article class="product-card">
@@ -664,10 +737,6 @@
     <main class="page page-elite-shell">
       <section class="content page-two page-elite">
         <h2 class="elite-title">Elite Tartölet Modelleri – El Yapımı</h2>
-        <div class="info-box">
-          <img src="onsekizcmtarttabani.jpeg" alt="18 cm Tart Tabanı" />
-          18 cm Tart Tabanı – Koli içi: 36 adet
-        </div>
         <div class="card-grid">
           <article class="product-card">
             <div class="product-image">
@@ -723,22 +792,22 @@
           </article>
           <article class="product-card">
             <div class="product-image">
+              <img src="elitekayık9cm.jpeg" alt="Elite Kayık 9 cm" />
+            </div>
+            <h3 class="product-title">Elite Kayık 9 cm</h3>
+            <p class="product-pack">Koli içi: 135 adet</p>
+          </article>
+          <article class="product-card">
+            <div class="product-image">
               <img src="19cmsabletabanı.jpeg" alt="Elite 18 cm Tartölet" />
             </div>
             <h3 class="product-title">Elite 18 cm Tartölet</h3>
           </article>
           <article class="product-card">
             <div class="product-image">
-              <img
-                src="elite4cmyuvarlaktartolet.jpeg"
-                alt="Elite 4 cm Yuvarlak Tartölet"
-              />
+              <img src="elite4.jpeg" alt="Elite 4 cm" />
             </div>
             <h3 class="product-title">Elite 4 cm Yuvarlak Tartölet</h3>
-          </article>
-          <article class="product-card">
-            <div class="product-image">ELITE TARTÖLET 8 FOTOĞRAFI</div>
-            <h3 class="product-title">Elite Tartölet</h3>
           </article>
         </div>
       </section>
@@ -845,8 +914,8 @@
               <td class="sable-col-image">
                 <img
                   class="sable-thumb"
-                  src="dokuzcmsabletabani.jpeg"
-                  alt="Yuvarlak 9 cm sable tabanı"
+                  src="sabletabanı9.jpeg"
+                  alt="Sable Tabanı 9 cm"
                 />
               </td>
               <td>Yuvarlak</td>
@@ -887,7 +956,7 @@
         <div class="contact-card">
           <div class="contact-item">
             <span class="contact-label">Adres</span>
-            <span>Gözler Mah. 280 Sk No:11, Kepez / Antalya</span>
+            <span>Gaziler Mahallesi 250 sokak No 3 Kepez/Antalya</span>
           </div>
           <div class="contact-item">
             <span class="contact-label">Instagram</span>
@@ -899,7 +968,7 @@
           </div>
           <div class="contact-item">
             <span class="contact-label">GSM</span>
-            <span>0 532 216 75 62</span>
+            <span>05322167562</span>
           </div>
         </div>
       </section>
