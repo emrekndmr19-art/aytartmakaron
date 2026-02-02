@@ -306,15 +306,21 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        gap: 8mm;
+        width: 100%;
+        box-sizing: border-box;
+        column-gap: 10mm;
+        row-gap: 10mm;
       }
 
       .other-card {
+        position: relative;
+        overflow: hidden;
+        box-sizing: border-box;
         border-radius: 6mm;
         background: rgba(255, 255, 255, 0.65);
         padding: 10mm;
         display: grid;
-        grid-template-rows: auto 1fr;
+        grid-template-rows: auto auto;
         gap: 4mm;
         break-inside: avoid;
       }
@@ -334,17 +340,25 @@
       .other-text {
         display: grid;
         gap: 1.5mm;
+        padding-top: 2mm;
         max-height: 25mm;
         overflow: hidden;
       }
 
       .other-image {
-        border-radius: 4mm;
+        width: 100%;
+        border-radius: 14px;
         background: linear-gradient(135deg, #efe3d6, #d8c0ad);
         aspect-ratio: 4 / 3;
-        min-height: 95mm;
         overflow: hidden;
+        max-height: 115mm;
+      }
+
+      .other-image img {
+        width: 100%;
+        height: 100%;
         object-fit: cover;
+        display: block;
       }
 
       @media print {
