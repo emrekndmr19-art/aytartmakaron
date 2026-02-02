@@ -351,7 +351,7 @@
       .page-other {
         display: grid;
         grid-template-rows: auto 1fr;
-        gap: 10mm;
+        gap: 8mm;
       }
 
       .page-other-title {
@@ -467,17 +467,19 @@
         letter-spacing: 0.1mm;
       }
 
-      .other-grid {
+      .page-other .other-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: 1fr;
+        grid-template-rows: repeat(2, minmax(0, 1fr));
         width: 100%;
+        height: 100%;
         box-sizing: border-box;
-        column-gap: 10mm;
-        row-gap: 10mm;
+        column-gap: 6mm;
+        row-gap: 6mm;
+        align-content: stretch;
       }
 
-      .other-card {
+      .page-other .other-card {
         position: relative;
         overflow: hidden;
         box-sizing: border-box;
@@ -487,10 +489,11 @@
           rgba(255, 255, 255, 0.9),
           rgba(247, 236, 226, 0.75)
         );
-        padding: 10mm;
+        padding: 6mm;
         display: grid;
-        grid-template-rows: auto auto;
-        gap: 4mm;
+        grid-template-rows: auto 1fr;
+        gap: 3mm;
+        min-height: 0;
         break-inside: avoid;
         box-shadow: 0 6px 18px rgba(101, 70, 48, 0.08);
       }
@@ -509,21 +512,22 @@
         letter-spacing: 0.1mm;
       }
 
-      .other-text {
+      .page-other .other-text {
         display: grid;
         gap: 1.5mm;
-        padding-top: 2mm;
-        max-height: 25mm;
+        padding-top: 1mm;
+        max-height: 32mm;
         overflow: hidden;
       }
 
-      .other-image {
+      .page-other .other-image {
         width: 100%;
         border-radius: 14px;
         background: linear-gradient(135deg, #f1ddca, #ddb696 60%, #f5e6d7);
         aspect-ratio: 4 / 3;
         overflow: hidden;
-        max-height: 115mm;
+        height: 62mm;
+        max-height: 70mm;
         box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.6);
         display: grid;
         place-items: center;
