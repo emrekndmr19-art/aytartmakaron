@@ -351,7 +351,7 @@
       .page-other {
         display: grid;
         grid-template-rows: auto 1fr;
-        gap: 8mm;
+        gap: 6mm;
       }
 
       .page-other-title {
@@ -473,6 +473,7 @@
         grid-template-rows: repeat(2, minmax(0, 1fr));
         width: 100%;
         height: 100%;
+        min-height: 0;
         box-sizing: border-box;
         column-gap: 6mm;
         row-gap: 6mm;
@@ -512,11 +513,19 @@
         letter-spacing: 0.1mm;
       }
 
+      .page-other .other-title {
+        font-size: 13pt;
+      }
+
+      .page-other .other-meta {
+        font-size: 10.5pt;
+      }
+
       .page-other .other-text {
         display: grid;
         gap: 1.5mm;
         padding-top: 1mm;
-        max-height: 32mm;
+        max-height: 22mm;
         overflow: hidden;
       }
 
@@ -527,7 +536,7 @@
         aspect-ratio: 4 / 3;
         overflow: hidden;
         height: 62mm;
-        max-height: 70mm;
+        max-height: 62mm;
         box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.6);
         display: grid;
         place-items: center;
