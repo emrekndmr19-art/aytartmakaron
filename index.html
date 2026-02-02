@@ -302,6 +302,48 @@
         color: var(--soft-brown);
       }
 
+      .page-sable {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        gap: 10mm;
+      }
+
+      .page-sable-title {
+        font-size: 20pt;
+        letter-spacing: 0.4mm;
+        text-transform: uppercase;
+        color: var(--soft-brown);
+      }
+
+      .sable-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 12.5pt;
+        color: var(--deep-brown);
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 4mm;
+        overflow: hidden;
+      }
+
+      .sable-table th,
+      .sable-table td {
+        padding: 4mm 6mm;
+        text-align: left;
+        border-bottom: 1px solid rgba(63, 52, 45, 0.15);
+      }
+
+      .sable-table th {
+        font-size: 12pt;
+        letter-spacing: 0.2mm;
+        text-transform: uppercase;
+        color: var(--soft-brown);
+        background: rgba(217, 199, 182, 0.35);
+      }
+
+      .sable-table tr:last-child td {
+        border-bottom: none;
+      }
+
       .other-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -528,6 +570,47 @@
             </div>
           </article>
         </div>
+      </section>
+    </main>
+    <main class="page">
+      <section class="content page-sable">
+        <h2 class="page-sable-title">Sable Tabanları</h2>
+        <table class="sable-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Ölçü</th>
+              <th>Adet</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Yuvarlak</td>
+              <td>6 cm</td>
+              <td>360 adet</td>
+            </tr>
+            <tr>
+              <td>Kare</td>
+              <td>6 cm</td>
+              <td>144 adet</td>
+            </tr>
+            <tr>
+              <td>Yuvarlak</td>
+              <td>9 cm</td>
+              <td>144 adet</td>
+            </tr>
+            <tr>
+              <td>Kare</td>
+              <td>9 cm</td>
+              <td>144 adet</td>
+            </tr>
+            <tr>
+              <td>Elips</td>
+              <td>9×3 cm</td>
+              <td>288 adet</td>
+            </tr>
+          </tbody>
+        </table>
       </section>
     </main>
   </body>
