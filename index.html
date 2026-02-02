@@ -1,1 +1,302 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ürün Kataloğu Kapak</title>
+    <style>
+      :root {
+        --page-width: 210mm;
+        --page-height: 297mm;
+        --page-margin: 20mm;
+        --cream: #f6f1ea;
+        --deep-brown: #3f342d;
+        --soft-brown: #574c45;
+        --accent: #d9c7b6;
+      }
 
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: #e9e1d8;
+        font-family: "Cormorant Garamond", "Didot", "Bodoni MT", "Times New Roman",
+          serif;
+        color: var(--deep-brown);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 24px;
+      }
+
+      .page {
+        width: var(--page-width);
+        height: var(--page-height);
+        background: var(--cream);
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 18px 45px rgba(63, 52, 45, 0.2);
+        break-after: page;
+      }
+
+      .content {
+        position: absolute;
+        inset: var(--page-margin);
+        display: grid;
+        grid-template-rows: 1fr auto 1fr;
+        gap: 12mm;
+      }
+
+      .logo-area {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid rgba(63, 52, 45, 0.18);
+        border-radius: 8mm;
+        background: rgba(255, 255, 255, 0.5);
+        min-height: 80mm;
+      }
+
+      .logo-placeholder {
+        width: 90mm;
+        height: 40mm;
+        border: 1.5px dashed rgba(63, 52, 45, 0.3);
+        border-radius: 6mm;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--soft-brown);
+        font-size: 18pt;
+        letter-spacing: 0.4mm;
+        text-transform: uppercase;
+      }
+
+      .title {
+        text-align: center;
+        font-size: 20pt;
+        letter-spacing: 0.6mm;
+        text-transform: uppercase;
+        color: var(--soft-brown);
+      }
+
+      .hero {
+        position: relative;
+        border-radius: 10mm;
+        background: linear-gradient(
+            135deg,
+            rgba(87, 76, 69, 0.08),
+            rgba(255, 255, 255, 0.1)
+          ),
+          linear-gradient(135deg, #e6d6c6, #f1e6db 65%, #d7c0ad);
+        overflow: hidden;
+        min-height: 110mm;
+      }
+
+      .hero::before,
+      .hero::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle at 35% 35%,
+          #f7ede4,
+          #d9c0aa 70%
+        );
+        opacity: 0.9;
+      }
+
+      .hero::before {
+        width: 95mm;
+        height: 95mm;
+        left: -15mm;
+        bottom: -25mm;
+      }
+
+      .hero::after {
+        width: 85mm;
+        height: 85mm;
+        right: -10mm;
+        top: -20mm;
+      }
+
+      .tart {
+        position: absolute;
+        width: 70mm;
+        height: 70mm;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle at 35% 35%,
+          #f5e4d2,
+          #caa58a 70%
+        );
+        box-shadow: inset 0 0 0 6mm #ead7c5;
+      }
+
+      .tart.tart-left {
+        left: 18mm;
+        bottom: 15mm;
+      }
+
+      .tart.tart-right {
+        right: 20mm;
+        bottom: 5mm;
+        transform: scale(0.85);
+      }
+
+      .macaron {
+        position: absolute;
+        width: 38mm;
+        height: 22mm;
+        border-radius: 12mm;
+        background: linear-gradient(180deg, #e7c8b2, #caa088);
+        bottom: 18mm;
+        right: 18mm;
+        box-shadow: 0 8px 20px rgba(63, 52, 45, 0.18);
+      }
+
+      .macaron::before {
+        content: "";
+        position: absolute;
+        inset: 4mm 2mm;
+        border-radius: 10mm;
+        background: linear-gradient(180deg, #f1dac7, #d5b299);
+      }
+
+      .page-two {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        gap: 10mm;
+      }
+
+      .page-two-title {
+        font-size: 22pt;
+        letter-spacing: 0.5mm;
+        text-transform: uppercase;
+        color: var(--soft-brown);
+      }
+
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 8mm;
+      }
+
+      .product-card {
+        border-radius: 8mm;
+        border: 1.5px solid rgba(63, 52, 45, 0.15);
+        background: rgba(255, 255, 255, 0.6);
+        padding: 8mm;
+        display: grid;
+        grid-template-rows: auto auto 1fr;
+        gap: 4mm;
+        break-inside: avoid;
+      }
+
+      .product-title {
+        font-size: 16pt;
+        color: var(--deep-brown);
+      }
+
+      .product-pack {
+        font-size: 12pt;
+        color: var(--soft-brown);
+      }
+
+      .product-image {
+        border-radius: 6mm;
+        background: linear-gradient(135deg, #efe3d6, #d8c0ad);
+        border: 1px dashed rgba(63, 52, 45, 0.25);
+      }
+
+      @media print {
+        body {
+          background: var(--cream);
+          padding: 0;
+        }
+
+        .page {
+          box-shadow: none;
+        }
+
+        @page {
+          size: A4;
+          margin: 20mm;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="content">
+        <div class="logo-area">
+          <div class="logo-placeholder">Logo</div>
+        </div>
+        <h1 class="title">Ürün Kataloğu</h1>
+        <div class="hero">
+          <span class="tart tart-left"></span>
+          <span class="tart tart-right"></span>
+          <span class="macaron"></span>
+        </div>
+      </section>
+    </main>
+    <main class="page">
+      <section class="content page-two">
+        <h2 class="page-two-title">Tartölet Modelleri</h2>
+        <div class="card-grid">
+          <article class="product-card">
+            <h3 class="product-title">4 cm Yuvarlak Tartölet</h3>
+            <p class="product-pack">Koli içi: 324 adet</p>
+            <div class="product-image"></div>
+          </article>
+          <article class="product-card">
+            <h3 class="product-title">4 cm Kare Tartölet</h3>
+            <p class="product-pack">Koli içi: 324 adet</p>
+            <div class="product-image"></div>
+          </article>
+          <article class="product-card">
+            <h3 class="product-title">6 cm Yuvarlak Tartölet</h3>
+            <p class="product-pack">Koli içi: 180 adet</p>
+            <div class="product-image"></div>
+          </article>
+          <article class="product-card">
+            <h3 class="product-title">9×3 cm Oval Tartölet</h3>
+            <p class="product-pack">Koli içi: -</p>
+            <div class="product-image"></div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <main class="page">
+      <section class="content page-two">
+        <h2 class="page-two-title">Tartölet Modelleri</h2>
+        <div class="card-grid">
+          <article class="product-card">
+            <h3 class="product-title">5 cm Küçük Tartölet</h3>
+            <p class="product-pack">Koli içi: 252 adet</p>
+            <div class="product-image"></div>
+          </article>
+          <article class="product-card">
+            <h3 class="product-title">9 cm Büyük Tartölet</h3>
+            <p class="product-pack">Koli içi: 135 adet</p>
+            <div class="product-image"></div>
+          </article>
+          <article class="product-card">
+            <h3 class="product-title">9 cm Yuvarlak Tartölet</h3>
+            <p class="product-pack">Koli içi: 72 adet</p>
+            <div class="product-image"></div>
+          </article>
+          <article class="product-card">
+            <h3 class="product-title">9 cm Büyük Kare Tartölet</h3>
+            <p class="product-pack">Koli içi: 81 adet</p>
+            <div class="product-image"></div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
