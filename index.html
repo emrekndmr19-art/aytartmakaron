@@ -718,6 +718,12 @@
           margin: 20mm;
         }
 
+        html,
+        body {
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+
         *,
         *::before,
         *::after {
@@ -751,9 +757,15 @@
         .hero-image,
         .container {
           box-shadow: none !important;
-          height: auto !important;
-          min-height: auto !important;
+          height: var(--page-height) !important;
+          min-height: var(--page-height) !important;
           overflow: visible !important;
+        }
+
+        .content {
+          position: relative !important;
+          inset: auto !important;
+          padding: var(--page-margin) !important;
         }
 
         .print-hero-img {
