@@ -1224,7 +1224,9 @@
 
       window.addEventListener("DOMContentLoaded", () => {
         document
-          .querySelectorAll(".product-image img, .other-image img")
+          .querySelectorAll(
+            ".product-image img, .other-image img, .sable-thumb"
+          )
           .forEach((img) => prepareImage(img));
       });
     </script>
